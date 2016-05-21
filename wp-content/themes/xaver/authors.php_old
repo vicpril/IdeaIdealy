@@ -1,0 +1,25 @@
+<?php
+/*
+Template Name: Authors list
+*/
+
+get_header();
+?>
+
+
+
+
+       <h1 class="title">Наши авторы</h1>  <br>
+       <div class="avtor2">
+       <ul>
+       <?
+
+       wp_list_authors2("optioncount=1&exclude_admin=1&show_fullname=1&hide_empty=&style=list");
+
+       ?>
+       </ul>
+       </div>
+
+
+<?php get_footer(); ?>
+

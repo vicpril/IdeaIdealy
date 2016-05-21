@@ -1,0 +1,246 @@
+# Translation of the WordPress plugin   by .
+# Copyright (C) 2010 
+# This file is distributed under the same license as the  package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2010.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version:  \n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/menus-plus\n"
+"POT-Creation-Date: 2010-04-06 18:19+0000\n"
+"PO-Revision-Date: 2010-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: menusplus.php:132
+msgid "Default"
+msgstr ""
+
+#: menusplus.php:190
+msgid "Add Home Page"
+msgstr ""
+
+#: menusplus.php:190 menusplus.php:286 menusplus.php:1677
+msgid "Home"
+msgstr ""
+
+#: menusplus.php:191
+msgid "Add a Category"
+msgstr ""
+
+#: menusplus.php:191 menusplus.php:300 menusplus.php:543 menusplus.php:1692
+msgid "Category"
+msgstr ""
+
+#: menusplus.php:192
+msgid "Add a Page"
+msgstr ""
+
+#: menusplus.php:192 menusplus.php:352 menusplus.php:593 menusplus.php:1682
+msgid "Page"
+msgstr ""
+
+#: menusplus.php:193
+msgid "Add a Post"
+msgstr ""
+
+#: menusplus.php:193 menusplus.php:405 menusplus.php:644 menusplus.php:1687
+msgid "Post"
+msgstr ""
+
+#: menusplus.php:194
+msgid "Add a URL"
+msgstr ""
+
+#: menusplus.php:194 menusplus.php:281 menusplus.php:424 menusplus.php:454
+#: menusplus.php:524 menusplus.php:663 menusplus.php:834 menusplus.php:1696
+msgid "URL"
+msgstr ""
+
+#: menusplus.php:196
+msgid "Add a Hybrid Menu"
+msgstr ""
+
+#: menusplus.php:196
+msgid "Hybrid Menu"
+msgstr ""
+
+#: menusplus.php:209
+msgid "Edit Menu"
+msgstr ""
+
+#: menusplus.php:212
+msgid "Delete Menu"
+msgstr ""
+
+#: menusplus.php:220
+msgid "Edit Hybrid Menu"
+msgstr ""
+
+#: menusplus.php:226
+msgid "New Menu"
+msgstr ""
+
+#: menusplus.php:242
+msgid "Template Tag"
+msgstr ""
+
+#: menusplus.php:250
+msgid "Shortcode"
+msgstr ""
+
+#: menusplus.php:258
+msgid "Docs"
+msgstr ""
+
+#: menusplus.php:285 menusplus.php:428 menusplus.php:450 menusplus.php:528
+#: menusplus.php:667 menusplus.php:826
+msgid "Label"
+msgstr ""
+
+#: menusplus.php:289 menusplus.php:415 menusplus.php:441 menusplus.php:458
+#: menusplus.php:532 menusplus.php:654 menusplus.php:680 menusplus.php:830
+msgid "Class"
+msgstr ""
+
+#: menusplus.php:293 menusplus.php:419 menusplus.php:445 menusplus.php:462
+#: menusplus.php:536 menusplus.php:658 menusplus.php:684 menusplus.php:838
+msgid "Attribute Title"
+msgstr ""
+
+#: menusplus.php:308 menusplus.php:360 menusplus.php:551 menusplus.php:601
+msgid "Children"
+msgstr ""
+
+#: menusplus.php:311 menusplus.php:363 menusplus.php:554 menusplus.php:604
+msgid "Yes"
+msgstr ""
+
+#: menusplus.php:314 menusplus.php:366 menusplus.php:557 menusplus.php:607
+msgid "No"
+msgstr ""
+
+#: menusplus.php:319 menusplus.php:371 menusplus.php:562 menusplus.php:612
+msgid "Child Order"
+msgstr ""
+
+#: menusplus.php:322 menusplus.php:565
+msgid "Name"
+msgstr ""
+
+#: menusplus.php:323 menusplus.php:377 menusplus.php:566 menusplus.php:618
+msgid "ID"
+msgstr ""
+
+#: menusplus.php:324 menusplus.php:567
+msgid "Count"
+msgstr ""
+
+#: menusplus.php:325 menusplus.php:379 menusplus.php:568 menusplus.php:620
+msgid "Slug"
+msgstr ""
+
+#: menusplus.php:326 menusplus.php:569
+msgid "Term Group"
+msgstr ""
+
+#: menusplus.php:329 menusplus.php:571
+msgid "My Category Order"
+msgstr ""
+
+#: menusplus.php:340 menusplus.php:393 menusplus.php:581 menusplus.php:632
+msgid "Depth"
+msgstr ""
+
+#: menusplus.php:374 menusplus.php:615 menusplus.php:718 menusplus.php:758
+msgid "Title"
+msgstr ""
+
+#: menusplus.php:375 menusplus.php:616
+msgid "Date"
+msgstr ""
+
+#: menusplus.php:376 menusplus.php:617
+msgid "Date Modified"
+msgstr ""
+
+#: menusplus.php:378 menusplus.php:619
+msgid "Author"
+msgstr ""
+
+#: menusplus.php:382 menusplus.php:622
+msgid "My Page Order"
+msgstr ""
+
+#: menusplus.php:432 menusplus.php:671
+msgid "Target"
+msgstr ""
+
+#: menusplus.php:435 menusplus.php:674
+msgid "Same window"
+msgstr ""
+
+#: menusplus.php:436 menusplus.php:675
+msgid "New window"
+msgstr ""
+
+#: menusplus.php:473 menusplus.php:728
+msgid "Add"
+msgstr ""
+
+#: menusplus.php:474 menusplus.php:698 menusplus.php:729 menusplus.php:769
+#: menusplus.php:800 menusplus.php:849 menusplus.php:882
+msgid "Cancel"
+msgstr ""
+
+#: menusplus.php:697 menusplus.php:768 menusplus.php:848
+msgid "Update"
+msgstr ""
+
+#: menusplus.php:799 menusplus.php:881
+msgid "Delete"
+msgstr ""
+
+#: menusplus.php:1067 menusplus.php:1148
+msgid "Depth must be an integer."
+msgstr ""
+
+#: menusplus.php:1386
+msgid "You cannot delete your only menu."
+msgstr ""
+
+#: menusplus.php:1409
+msgid ""
+"This parameter controls how many levels in the hierarchy are to be included. "
+"\\n\\n 0 : Displays all depths \\n 1 : Displays only the top heirarchy \\n "
+"n : Displays items to the given depth \\n\\n Depending on the depth you set, "
+"it may override your children display settings."
+msgstr ""
+
+#: menusplus.php:1701
+msgid "Hybrid"
+msgstr ""
+
+#: menusplus.php:1719 menusplus.php:1729
+msgid "Edit"
+msgstr ""
+
+#: menusplus.php:1723 menusplus.php:1733
+msgid "Remove"
+msgstr ""
+
+#: menusplus.php:2192
+msgid "Menus Plus+"
+msgstr ""
+
+#: menusplus.php:2206
+msgid "Title:"
+msgstr ""
+
+#: menusplus.php:2215
+msgid "Menu:"
+msgstr ""
