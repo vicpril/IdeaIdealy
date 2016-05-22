@@ -62,6 +62,47 @@ function wt_return_coauthors($postid, $dolink = false) {
     return $coauthor;
 }
 
+function wt_return_coauthors_en($postid, $dolink = false) {
+    $getcoauthor = get_post_meta($postid, 'coauthor', false);
+
+    //print_r($getcoauthor);
+
+    $coauthor = "";
+    if (is_array($getcoauthor)):
+        $i = 0;
+        $ac = count($getcoauthor);
+        foreach ($getcoauthor as $author):
+            //if(username_exists($author)):
+            $i++;
+
+            $getauthordata = get_user_by_display_name($author); //get_userdatabylogin($author);
+            $authorid = $getauthordata->ID;
+//				$link = "/author/".$getauthordata->user_login;
+            $link = get_author_posts_url($getauthordata->ID, $getauthordata->user_nicename);
+            $name = $getauthordata->us_name_en . " " . $getauthordata->us_initials_en;
+
+            if ($getauthordata) {
+                $coauthor .= sprintf('<a href="%1$s" title="%2$s">%3$s</a>', $link, sprintf(__('Posts by %s'), $getauthordata->nickname), $name);
+            } else {
+                $coauthor .= $author;
+            }
+
+            if ($i !== $ac):
+                $coauthor .= ', ';
+            elseif ($i == $ac):
+                if ($dolink):
+                    $coauthor .= sprintf(' <span class="coauthor-sep">%s</span> ', __('', 'wt-co-authors'));
+                else:
+                    $coauthor .= sprintf(' %s ', __('', 'wt-co-authors'));
+                endif;
+            endif;
+            //endif;
+        endforeach;
+        $coauthor = $coauthor;
+    endif;
+    return $coauthor;
+}
+
 function wt_return_editors($postid, $dolink = false) {
     $geteditors = get_post_meta($postid, 'editor', false);
     $editors = "";
@@ -84,12 +125,25 @@ function wt_return_editors($postid, $dolink = false) {
 }
 
 //Template tag for manual use. Displays the coauthors together with the original author. To replace the_author, the_author_posts_link etc
-function wt_the_coauthors_link($before = false, $after = false) {
-    global $post;
-    $coauthors = wt_return_coauthors($post->ID, true);
-    if ($coauthors) {
-        echo $before . $coauthors . $content . $after;
+function wt_the_coauthors_link($before = false, $after = false, $lang = 'ru', $pid_ru = '') {
+    switch ($lang) {
+        case 'ru':
+            global $post;
+                $coauthors = wt_return_coauthors($post->ID, true);
+                if ($coauthors) {
+                    echo $before . $coauthors . $content . $after;
+                }
+            break;
+            
+        case 'en':
+                $coauthors = wt_return_coauthors_en($pid_ru, true);
+                if ($coauthors) {
+                    echo $before . $coauthors . $content . $after;
+                }
+            break;
     }
+    
+    
 //	echo $before.$coauthors.$content.$after;
 }
 
