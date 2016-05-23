@@ -154,7 +154,8 @@ else
 
                 <div class="info">
                     <div class="info-list">
-                        <a style='font-size:16px;font-weight:bold;text-decoration:none' href="<?=$permalink?>" rel="bookmark" title="Go to the article: <?php the_title(); ?>"><?=$title?></a><? echo " / <div style='display:inline' class='crumbs'><a href='/en/archive#$yearno' title='Go to the magazine'>Magazine " . $yearno . " year</a> &raquo; <a href='/en/nomer?yearno=$yearno&no=$no&tom=$tom' title='Go to this No.'>№" . $no . ", Volume " . $tom . "</a></div>"; ?>
+                        <a style='font-size:16px;font-weight:bold;text-decoration:none' href="<?=$permalink?>" rel="bookmark" title="Go to the article: <?=$title?>"><?=$title?></a>
+                            <? echo " / <div style='display:inline' class='crumbs'><a href='/en/archive#$yearno' title='Go to the magazine'>Magazine " . $yearno . " year</a> &raquo; <a href='/en/nomer-en?yearno=$yearno&no=$no&tom=$tom' title='Go to this No.'>№" . $no . ", Volume " . $tom . "</a></div>"; ?>
                 <?php //if(function_exists(wt_the_coauthors_link)): wt_the_coauthors_link("<br><b>","</b>"); endif;
                 ?>
                         <!--<br>

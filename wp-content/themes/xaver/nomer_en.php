@@ -36,7 +36,8 @@ get_header();
             $nomera=key($nomera);
 
       //       echo '/nomer?tom=1&yearno='.$yearno.'&no='.$nomera;
-       wp_redirect(get_option('siteurl') . '/en/nomer?tom=1&yearno='.$yearno.'&no='.$nomera.'&por='.$noma);
+//       wp_redirect(get_option('siteurl') . '/en/nomer?tom=1&yearno='.$yearno.'&no='.$nomera.'&por='.$noma);
+       wp_redirect(get_option('siteurl') . '/en/nomer-en?tom=1&yearno='.$yearno.'&no='.$nomera.'&por='.$noma);
 
 
 get_footer(); ?>

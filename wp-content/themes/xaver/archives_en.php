@@ -59,7 +59,7 @@ foreach($year as $key => $val)
          krsort($val);
          foreach($val as $key2 => $val2)
          {
-         	echo "<h3><a href='/en/nomer?tom=1&yearno={$key}&no={$key2}&por={$noma}'>No. ".$key2." (".$noma--.")</a></h3>";
+         	echo "<h3><a href='/en/nomer-en?tom=1&yearno={$key}&no={$key2}&por={$noma}'>No. ".$key2." (".$noma--.")</a></h3>";
          }
          echo "<br>";
     } else {
