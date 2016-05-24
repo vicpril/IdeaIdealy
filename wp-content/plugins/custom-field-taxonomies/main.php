@@ -166,6 +166,9 @@ abstract class CFT_core
 		foreach ( CFT_core::$query_vars as $key => $value )
 		{
 			$name = CFT_core::$map[$key];
+            
+            // translate in english by polylang
+                    $name = pll__($name);
 
 			if ( is_array($value) )
 				$value = esc_html($value['min']) . ' &mdash; ' . esc_html($value['max']);

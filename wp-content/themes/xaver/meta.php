@@ -183,7 +183,8 @@ if($yearno>2000 and $no>0){
 					if(!empty($text['attach']))
 					{
 
-						$text["link"]=$post->guid;
+//						$text["link"]=$post->guid;
+						$text["link"]=get_permalink();
 					}
 					else{
 						$text["no"]="1";

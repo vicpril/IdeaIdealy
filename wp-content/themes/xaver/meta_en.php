@@ -1,5 +1,7 @@
 <?php
 
+ob_start();
+
 get_header();
 $yearno=(int)$_GET['yearno'];
 $no=(int)$_GET['no'];
@@ -70,7 +72,7 @@ if($yearno>2000 and $no>0){
                             
                             
 	<?php if (have_posts()) : ?>
-		<?php //the_meta_title();
+		<?php // the_meta_title();
         
         
 		?>
@@ -91,9 +93,13 @@ if($yearno>2000 and $no>0){
                  // print_r($allcats);
 
                             if($allcats[($b-1)]!==$catnew["0"]->cat_ID){
+                                $field = get_field('cat_en', $post->ID);
+                                $cat_en = get_term_by('name', $field, 'category');
+                                $cat_link = get_term_link($cat_en->term_id, 'category');
 //					       echo "<br><strong style='color:black'>"; the_category(''); echo "</strong>";
-					       echo "<br><strong style='color:black'>";
-                           echo get_field('cat_en', $post->ID); echo "</strong>";
+					       echo "<br><strong style='color:black'><ul class='post-categories'><li>";
+                           echo "<a rel='category tag' href='$cat_link'>$field</a>"; 
+                           echo "</li></ul></strong>";
 					       }
 
 
@@ -185,7 +191,8 @@ if($yearno>2000 and $no>0){
 					if(!empty($text['attach']))
 					{
 
-						$text["link"]=$post->guid;
+//						$text["link"]=$post->guid;
+						$text["link"]=$permalink;
 					}
 					else{
 						$text["no"]="1";

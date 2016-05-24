@@ -145,7 +145,7 @@ $cats=join(",",$cats);
        }
        $cats=join(",",$cats);
 
-	echo "<div class='crumbs'><a href='/en/archive#$yearno' title='Go to this magazin materials'>Magazine ".$yearno ." year</a> &raquo; <a href='/en/nomer?yearno=$yearno&no=$no&tom=$tom' title='Go to this no.'>№" . $no . ", value " . $tom."</a> &raquo; ".$cats."</div>";
+	echo "<div class='crumbs'><a href='/en/archive#$yearno' title='Go to this magazin materials'>Magazine ".$yearno ." year</a> &raquo; <a href='/en/nomer-en?yearno=$yearno&no=$no&tom=$tom' title='Go to this no.'>№" . $no . ", value " . $tom."</a> &raquo; ".$cats."</div>";
 
 
                 ?>

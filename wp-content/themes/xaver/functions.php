@@ -9,7 +9,7 @@
 // update_option ('siteurl', 'http://ideaidealy.ru');
 // update_option ('home', 'http://ideaidealy.ru');
 
-//require_once 'string-translate.php';
+require_once 'string-translate.php';
 
 define('LANG', pll_current_language());
 

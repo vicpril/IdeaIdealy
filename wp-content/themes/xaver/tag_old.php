@@ -1,11 +1,3 @@
-<?php 
-if (LANG == 'en') {
-    include_once 'tag_en.php';
-} else {
- ?>
-
-
-
 <?php get_header(); ?>
 
 <h1><? single_cat_title('Тема ' )?></h1>
@@ -13,10 +5,7 @@ if (LANG == 'en') {
 
 
 <div class="info">
-                   <p style="float:right;display:inline;padding-right:40px;padding-top:5px" class="info-list-box2">
-                       <a href="" class="ss">А (аннотация)</a>
-                       <a href="" title="Т" class="sss">Т (текст)</a>
-                   </p>
+                   <p style="float:right;display:inline;padding-right:40px;padding-top:5px" class="info-list-box2"><a href="" class="ss">А (аннотация)</a><a href="" title="Т" class="sss">Т (текст)</a><a href="" title="Р" class="ssss">К (классификатор)</a><a href="" title="Р" class="sssss">О (отклики)</a></p>
 
                     <div class="info-list"><ul>
 
@@ -57,10 +46,7 @@ $tom = get_post_meta($post->ID,'tom','single');
 						 function doit_<?=$post->ID?>(id,what)
 						 {
        							if(what=='excerpt'){
-						 	 $("#"+id+"_udk").toggle("slow");
 						 	 $("#"+id+"_ex").toggle("slow");
-						 	 $("#"+id+"_kw").toggle("slow");
-						 	 $("#"+id+"_lit").toggle("slow");
 						 	 }
 						 	 if(what=='recen'){
 						 	 $("#"+id+"_recen").toggle("slow");
@@ -73,10 +59,10 @@ $tom = get_post_meta($post->ID,'tom','single');
 						 }
 						</script>
 
-					<?php         //print_r($post);
+					<?         //print_r($post);
                          unset($excerpt,$text,$recen,$tags);  $recent=get_post_meta($post->ID,"recen",true);
 
-                    if(!empty($recent))
+                    	if(!empty($recent))
 					{
 
 						$recen["text"]=$recent;
@@ -87,13 +73,8 @@ $tom = get_post_meta($post->ID,'tom','single');
 						$recen["no"]="1";
 						$recen["js"]="onClick='return false;'";
 					}
-                    
-                    $annotation = get_field('annotation', $post->ID);
-                    if ($annotation) {
-                        $excerpt["text"]=$annotation;
-						$excerpt["js"]="onClick='doit_".$post->ID."(".$post->ID.",\"excerpt\");return false;'";
-                    }
-					elseif(!empty($post->post_excerpt))
+
+					if(!empty($post->post_excerpt))
 					{
 
 						$excerpt["text"]=$post->post_excerpt;
@@ -104,20 +85,15 @@ $tom = get_post_meta($post->ID,'tom','single');
 						$excerpt["js"]="onClick='return false;'";
 					}
 
-					$text['attach']=get_post_meta($post->ID,"File Upload",true);
-                    
-//					if(!empty($post->post_content) || !empty($text['attach']))
-					if(!empty($text['attach']))
+					if(!empty($post->post_content))
 					{
 
-//						$text["link"]=$post->guid;
-						$text["link"]=get_permalink();
+						$text["link"]=$post->guid;
 					}
 					else{
 						$text["no"]="1";
 						$text["js"]="onClick='return false;'";
 					}
-
 
 			$post_tags = get_the_tags();
             if ($post_tags):
@@ -137,23 +113,17 @@ $tom = get_post_meta($post->ID,'tom','single');
                      </td><td align=right>
 
 					<p class="info-list-box" id="<?=$post->ID?>_line">
-					
-					<? if(!isset($excerpt['no'])){ ?>
-						<a href="" <?=$excerpt["js"]?> title="Анотация" class="ss<?=$excerpt["no"]?>">А</a>
-					<? } ?>
-					
-					<? if(!isset($text['no'])){ ?>
-						 <a href="<?=$text["link"]?>" <?=$text["js"]?> title="Текст" class="sss<?=$text["no"]?>">Т</a>
-					<? } ?>
-
-						<!-- <a href="" <?=$tags["js"]?> title="Классификатор" class="ssss<?=$tags["no"]?>">К</a><a href="" title="Отклики" <?=$recen["js"]?> class="sssss<?=$recen["no"]?>">О</a>--></p>
-                      </td></tr><tr><td colspan=2>
-                     <?php if(get_field('udk', $post->ID)) : ?><div style="padding:10px;border-bottom:dotted 1px;display:none" id="<?=$post->ID?>_udk"><b style="margin-left:-10px">УДК:</b> <?=get_field('udk', $post->ID);?></div><?php endif; ?>
-                     <div style="padding:10px;border-bottom:dotted 1px;display:none" id="<?=$post->ID?>_ex"><b style="margin-left:-10px">Аннотация:</b> <br><div><?=$excerpt["text"]?></div></div>
-                     <?php if(get_field('keywords', $post->ID)) : ?><div style="padding:10px;border-bottom:dotted 1px;display:none" id="<?=$post->ID?>_kw"><b style="margin-left:-10px">Ключевые слова:</b> <?=get_field('keywords', $post->ID)?></div><?php endif; ?>
-                     <?php if(get_field('literatura', $post->ID) || get_field('literatura_en', $post->ID)) : ?><div style="padding:10px;border-bottom:dotted 1px;display:none" id="<?=$post->ID?>_lit"><b style="margin-left:-10px">Список литературы:</b> <br><div style="margin-left: 20px;"><?=get_field('literatura', $post->ID)?><br><?=get_field('literatura_en', $post->ID)?></div></div><?php endif; ?>
-                     <div style="padding:10px;border-bottom:dotted 1px;display:none" id="<?=$post->ID?>_recen"><b style="margin-left:-10px">Отклики: </b><?=$recen["text"]?></div>
-                     <div style="padding:10px;border-bottom:dotted 1px;display:none;text-transform:lowercase;" id="<?=$post->ID?>_tags"><b style="margin-left:-10px">Темы материала: </b><?=$tags["text"]?></div>
+                        <a href="" <?=$excerpt["js"]?> title="Анотация" class="ss<?=$excerpt["no"]?>">А</a>
+                        <a href="<?=$text["link"]?>" <?=$text["js"]?> title="Текст" class="sss<?=$text["no"]?>">Т</a
+                        <a href="" <?=$tags["js"]?> title="Классификатор" class="ssss<?=$tags["no"]?>">К</a>
+                        <a href="" title="Отклики" <?=$recen["js"]?> class="sssss<?=$recen["no"]?>">О</a>
+                    </p>
+                      
+                     
+                     </td></tr><tr><td colspan=2>
+                     <div style="padding:10px;border-bottom:dotted 1px;display:none" id="<?=$post->ID?>_ex">Аннотация: <?=$excerpt["text"]?></div>
+                     <div style="padding:10px;border-bottom:dotted 1px;display:none" id="<?=$post->ID?>_recen">Отклики: <?=$recen["text"]?></div>
+                     <div style="padding:10px;border-bottom:dotted 1px;display:none;text-transform:lowercase;" id="<?=$post->ID?>_tags">Темы материала: <?=$tags["text"]?></div>
 
 					</td></tr></table><br>
 					</li>
@@ -172,7 +142,7 @@ $tom = get_post_meta($post->ID,'tom','single');
 
 <div style="clear: both;"></div>
 
-<p class="pagination"><?php previous_posts_link('&laquo; Предыдущая страница ') ?>   <?php next_posts_link('Следующая страница &raquo;') ?></p>
+<p class="pagination"><?php next_posts_link('Следующая страница &raquo;') ?> <?php previous_posts_link('&laquo; Предыдущая страница ') ?></p>
 
 <?php else : ?>
 
@@ -189,4 +159,3 @@ $tom = get_post_meta($post->ID,'tom','single');
 
 <?php get_footer(); ?>
 
-<?php } ?>
