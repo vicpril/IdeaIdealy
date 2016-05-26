@@ -13,6 +13,7 @@ $extra_fields = array(
     array('us_initials_en', 'Инициалы - eng', false),
 //                    array( 'us_job', __('Job'), false ),
                     array( 'us_post', 'Должность', false ),
+                    array( 'us_post_en', 'Должность - eng', false ),
 );
 
 // Use the user_contactmethods to add new fields

@@ -21,6 +21,7 @@ function ii_redcolegia_activate() {
                 groupe VARCHAR(256) NOT NULL,
                 user_id mediumint(5),
                 post VARCHAR(256) NOT NULL,
+                post_en VARCHAR(256) NOT NULL,
                 UNIQUE KEY id (id))
                 COLLATE 'utf8_general_ci';
                 ";

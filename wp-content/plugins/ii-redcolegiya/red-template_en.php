@@ -1,9 +1,3 @@
-<?php 
-if (LANG == 'en') {
-    include_once 'red-template_en.php';
-} else {
- ?>
-
 <?php
 get_header();
 ?>
@@ -45,7 +39,7 @@ get_header();
             }
             ?>
             <p>
-            <h2>РЕДАКЦИЯ</h2>
+            <h2>EDITORIAL STAFF</h2>
             <ul>
                 <?php
                 foreach ($redakcia as $value) {
@@ -56,16 +50,16 @@ get_header();
 //                        var_dump($user_meta);
 
                         echo '<li>';
-                        if ($value->post != '') {
-                            echo "<em>$value->post:</em><br>";
+                        if ($value->post_en != '') {
+                            echo "<em>$value->post_en:</em><br>";
                         }
 
-                        $name = "<a href='" . get_author_posts_url($user->ID, $user->user_nicename) . "'>" . $user_meta['us_full-name'][0] . "</a>";
+                        $name = "<a href='" . get_author_posts_url($user->ID, $user->user_nicename) . "'>" . $user_meta['us_name_en'][0] . " ". $user_meta['us_initials_en'][0] . "</a>";
 
                         $edit_link = " -> <a class='edit-link' href='" . home_url() . "/wp-admin/user-edit.php?user_id=" . $user->ID . "' target='_blank' style='color: dodgerblue;'>Редактировать</a>";
 
-                        if (isset($user_meta['us_post'][0]) && $user_meta['us_post'][0] != '') {
-                            $post = ', ' . $user_meta['us_post'][0];
+                        if (isset($user_meta['us_post_en'][0]) && $user_meta['us_post_en'][0] != '') {
+                            $post = ', ' . $user_meta['us_post_en'][0];
                         } else {
                             $post = '<br>';
                         }
@@ -84,7 +78,7 @@ get_header();
         </p>
 
         <p>
-        <h2>РЕДАКЦИОННЫЙ СОВЕТ</h2>
+        <h2>EDITORIAL COUNCIL</h2>
         <ul>
             <?php
             foreach ($sovet as $value) {
@@ -95,17 +89,17 @@ get_header();
 //                        var_dump($user_meta);
 
                     echo '<li>';
-                    if ($value->post != '') {
-                        echo "<em>$value->post:</em><br>";
+                    if ($value->post_en != '') {
+                        echo "<em>$value->post_en:</em><br>";
                         ;
                     }
 
-                    $name = "<a href='" . get_author_posts_url($user->ID, $user->user_nicename) . "'>" . $user_meta['us_full-name'][0] . "</a>";
+                    $name = "<a href='" . get_author_posts_url($user->ID, $user->user_nicename) . "'>" . $user_meta['us_name_en'][0] . " ". $user_meta['us_initials_en'][0] . "</a>";
 
                         $edit_link = " -> <a class='edit-link' href='" . home_url() . "/wp-admin/user-edit.php?user_id=" . $user->ID . "' target='_blank' style='color: dodgerblue;'>Редактировать</a>";
 
-                        if (isset($user_meta['us_post'][0]) && $user_meta['us_post'][0] != '') {
-                            $post = ', ' . $user_meta['us_post'][0];
+                        if (isset($user_meta['us_post_en'][0]) && $user_meta['us_post_en'][0] != '') {
+                            $post = ', ' . $user_meta['us_post_en'][0];
                         } else {
                             $post = '<br>';
                         }
@@ -125,7 +119,7 @@ get_header();
 
 
         <p>    
-        <h2>МЕЖДУНАРОДНЫЙ РЕДАКЦИОННЫЙ СОВЕТ</h2>
+        <h2>INTERNATIONAL EDITORIAL BOARD</h2>
         <ul>
             <?php
             foreach ($int_sovet as $value) {
@@ -136,16 +130,16 @@ get_header();
 //                        var_dump($user_meta);
 
                     echo '<li>';
-                    if ($value->post != '') {
-                        echo "<em>$value->post:</em>";
+                    if ($value->post_en != '') {
+                        echo "<em>$value->post_en:</em>";
                     }
 
-                    $name = "<a href='" . get_author_posts_url($user->ID, $user->user_nicename) . "'>" . $user_meta['us_full-name'][0] . "</a>";
+                    $name = "<a href='" . get_author_posts_url($user->ID, $user->user_nicename) . "'>" . $user_meta['us_name_en'][0] . " ". $user_meta['us_initials_en'][0] . "</a>";
 
                         $edit_link = " -> <a class='edit-link' href='" . home_url() . "/wp-admin/user-edit.php?user_id=" . $user->ID . "' target='_blank' style='color: dodgerblue;'>Редактировать</a>";
 
-                        if (isset($user_meta['us_post'][0]) && $user_meta['us_post'][0] != '') {
-                            $post = ', ' . $user_meta['us_post'][0];
+                        if (isset($user_meta['us_post_en'][0]) && $user_meta['us_post_en'][0] != '') {
+                            $post = ', ' . $user_meta['us_post_en'][0];
                         } else {
                             $post = '<br>';
                         }
@@ -182,5 +176,3 @@ else:
 <?php endif; ?>
 
 <?php get_footer(); ?>
-
-<?php } ?>

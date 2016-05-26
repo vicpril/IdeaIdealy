@@ -142,7 +142,13 @@ function export_getPages() {
             <?php
             $data = array();
             foreach ($pageposts as $page) {
-                $data[] = (Array) $page;
+                if (is_plugin_active('polylang/polylang.php')) {
+                    if (pll_get_post_language($page->ID) == false || pll_get_post_language($page->ID) == 'ru' ) {
+                        $data[] = (Array) $page;
+                    }
+                } else {
+                    $data[] = (Array) $page;
+                }
             }
             $uniListTable = new Export_List_Table();
             $uniListTable->prepare_items($data);

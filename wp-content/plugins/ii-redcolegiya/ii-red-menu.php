@@ -140,9 +140,19 @@ function redcolegia_page() {
                                 <input hidden="" type="text" name="data[red][<?= $i ?>][groupe]" value="редакция" raw_type="red"/>
                             </td>
                             <td>
-                                <input type="text" class="post" name="data[red][<?= $i ?>][post]" pos="<?= $i ?>" style="width: 350px;" placeholder="Должность" value="<?php
+                                <input type="text" class="post" name="data[red][<?= $i ?>][post]" pos="<?= $i ?>" style="width: 250px;" placeholder="Должность" value="<?php
                                 if (isset($redakcia[0])) {
                                     echo $redakcia[0]->post;
+                                } else {
+                                    echo '';
+                                }
+                                ?>"/>
+                            </td>
+                            
+                            <td>
+                                <input type="text" class="post-en" name="data[red][<?= $i ?>][post_en]" pos="<?= $i ?>" style="width: 250px;" placeholder="Должность - eng" value="<?php
+                                if (isset($redakcia[0])) {
+                                    echo $redakcia[0]->post_en;
                                 } else {
                                     echo '';
                                 }
@@ -228,9 +238,19 @@ function redcolegia_page() {
                                 <input hidden="" type="text" name="data[sov][<?= $i ?>][groupe]" value="редакционный совет" raw_type="sov"/>
                             </td>
                             <td>
-                                <input type="text" class="post" name="data[sov][<?= $i ?>][post]" pos="<?= $i ?>" style="width: 350px;" placeholder="Должность" value="<?php
+                                <input type="text" class="post" name="data[sov][<?= $i ?>][post]" pos="<?= $i ?>" style="width: 250px;" placeholder="Должность" value="<?php
                                 if (isset($sovet[0])) {
                                     echo $sovet[0]->post;
+                                } else {
+                                    echo '';
+                                }
+                                ?>"/>
+                            </td>
+                            
+                            <td>
+                                <input type="text" class="post-en" name="data[sov][<?= $i ?>][post_en]" pos="<?= $i ?>" style="width: 250px;" placeholder="Должность - eng" value="<?php
+                                if (isset($sovet[0])) {
+                                    echo $sovet[0]->post_en;
                                 } else {
                                     echo '';
                                 }
@@ -315,9 +335,19 @@ function redcolegia_page() {
                                 <input hidden="" type="text" name="data[intsov][<?= $i ?>][groupe]" value="международный редакционный совет" raw_type="intsov"/>
                             </td>
                             <td>
-                                <input type="text" class="post" name="data[intsov][<?= $i ?>][post]" pos="<?= $i ?>" style="width: 350px;" placeholder="Должность" value="<?php
+                                <input type="text" class="post" name="data[intsov][<?= $i ?>][post]" pos="<?= $i ?>" style="width: 250px;" placeholder="Должность" value="<?php
                                 if (isset($int_sovet[0])) {
                                     echo $int_sovet[0]->post;
+                                } else {
+                                    echo '';
+                                }
+                                ?>"/>
+                            </td>
+                            
+                            <td>
+                                <input type="text" class="post-en" name="data[intsov][<?= $i ?>][post_en]" pos="<?= $i ?>" style="width: 250px;" placeholder="Должность - eng" value="<?php
+                                if (isset($int_sovet[0])) {
+                                    echo $int_sovet[0]->post_en;
                                 } else {
                                     echo '';
                                 }

@@ -9,3 +9,6 @@ pll_register_string( 'meta',     'Идеи и Идеалы',    $groupe);
 pll_register_string( 'CF Taxonomy',     'Том журнала',    'plugin');
 pll_register_string( 'CF Taxonomy',     'Год издания журнала',    'plugin');
 pll_register_string( 'CF Taxonomy',     'Номер журнала',    'plugin');
+//pll_register_string( 'II-redcolegiao',     'РЕДАКЦИЯ',    'plugin');
+//pll_register_string( 'II-redcolegiao',     'РЕДАКЦИОННЫЙ СОВЕТ',    'plugin');
+//pll_register_string( 'II-redcolegiao',     'МЕЖДУНАРОДНЫЙ РЕДАКЦИОННЫЙ СОВЕТ',    'plugin');

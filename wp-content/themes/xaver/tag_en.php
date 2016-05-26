@@ -39,18 +39,26 @@
 
 					     //  echo "<strong style='color:black'>"; the_category(''); echo "</strong>";
                 
-//                    $pid_en = pll_get_post_translations($post->ID);
-                                        
                     $permalink = get_permalink($pid_en['en']);
                     
                     $title_en = get_field('title_en', $post->ID);
+                    
+                    
+                    //No's link
+                    if ($yearno < 2016) {
+                        $link_archive = "<a href='" . home_url('archive-en') . "/archive#$yearno' title='Go to this magazin materials'>Magazine ".$yearno ." year</a>";
+                        $link_no = "<a href='" . home_url('archive-en') . "/nomer?yearno=$yearno&no=$no&tom=$tom' title='Go to this no.'>№" . $no . ", value " . $tom."</a></div>";
+                    } else {
+                        $link_archive = "<a href='/en/archive-2#$yearno' title='Go to this magazin materials'>Magazine ".$yearno ." year</a>";
+                        $link_no = "<a href='/nomer-en?yearno=$yearno&no=$no&tom=$tom' title='Go to this no.'>№" . $no . ", value " . $tom."</a></div>";
+                    }
                    ?>
 
 
 					<li>
 					<table border=0 class="rast"><tr><td>
 
-					<a style='font-size:16px;font-weight:bold;text-decoration:none' href="<?=$permalink ?>" rel="bookmark" title="Go to the article: <?=$title_en?>"><?=$title_en?></a><? echo " / <div style='display:inline' class='crumbs'><a href='/archive#$yearno' title='Go to this magazin materials'>Magazine ".$yearno ." year</a> &raquo; <a href='/nomer?yearno=$yearno&no=$no&tom=$tom' title='Go to this no.'>№" . $no . ", Том " . $tom."</a></div>"; ?>
+					<a style='font-size:16px;font-weight:bold;text-decoration:none' href="<?=$permalink ?>" rel="bookmark" title="Go to the article: <?=$title_en?>"><?=$title_en?></a><? echo " / <div style='display:inline' class='crumbs'>$link_archive &raquo; $link_no</div>"; ?>
 <?php if(function_exists(wt_the_coauthors_link)): wt_the_coauthors_link("<b>","</b>", 'en', $post->ID); endif; ?><?php edit_post_link('Edit', '&nbsp;&laquo;&laquo;&nbsp;', ''); ?>
 
 
@@ -173,13 +181,13 @@
 
 <div style="clear: both;"></div>
 
-<p class="pagination"><?php previous_posts_link('&laquo; Предыдущая страница ') ?>   <?php next_posts_link('Следующая страница &raquo;') ?></p>
+<p class="pagination"><?php previous_posts_link('&laquo; Older Entries ') ?>   <?php next_posts_link('Newer Entries &raquo;') ?></p>
 
 <?php else : ?>
 
-<h2 >Нет материала по данной ссылке</h2>
+<h2  class="center">This number or numbers that have not yet emerged, or the content is not ready for it</h2>
 
-<p>Извините, но по данному адресу материала нет.</p>
+<p class="center">Try to find another no. of our magazine.</p>
 
 <?php endif; ?>
 
