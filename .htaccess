@@ -1,3 +1,12 @@
+# Close on service
+#<IfModule mod_rewrite.c>
+#RewriteEngine On
+#RewriteBase /
+#RewriteCond %{REMOTE_ADDR} !=37.192.103.248
+#RewriteRule ^.* infosite.php [L] 
+#</IfModule>
+
+
 AddDefaultCharset UTF-8
 # BEGIN WordPress
 <IfModule mod_rewrite.c>

@@ -1,0 +1,11 @@
+AddDefaultCharset UTF-8
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /archive-en/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /archive-en/index.php [L]
+</IfModule>
+
+# END WordPress

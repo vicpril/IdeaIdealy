@@ -1,0 +1,369 @@
+/*
+Theme Name: Xaver
+Theme URI: http://xaver.ru
+Description: Theme from xaver.ru
+Version: 1.0
+Author: Xaver
+Tags: mantle color, variable width, two columns, widgets
+
+
+*/
+
+
+/* End captions & aligment */
+
+*		{ margin:0; padding:0; border:0; }
+
+ul		{ list-style:none; }
+a		{ color:#980000; text-decoration:underline; }
+a:hover	{ text-decoration:none; }
+
+h1		{ color:#1c1c1c; font:bold 24px/30px Courier New, Arial, Tahoma; }
+h2		{ color:#836f69; font:normal 18px/20px Tahoma, Verdana, Arial; text-transform:uppercase; padding:0 0 18px 0; }
+h3		{ color:#000; font:bold 15px/30px Verdana, Arial, Tahoma; }
+h4		{ color:#000; font:bold 16px/20px Tahoma, Verdana, Arial; }
+h5		{ color:#000; font:bold 14px/18px Tahoma, Verdana, Arial; }
+h6		{ color:#000; font:bold 12px/16px Tahoma, Verdana, Arial; }
+
+body {
+	color:#4e4e4e;
+	text-align:center;
+	font:normal 12px/18px Tahoma, Verdana, Arial;
+	min-width:1000px;
+	width:100%;
+	width: expression(document.body.clientWidth < 1000 ? "100%" : "1000px")
+}
+
+html, body {
+	width:100%;
+	height:100%;
+	padding:0;
+	margin:0;
+}
+
+.main {
+	margin:0 auto;
+	min-height:100%;
+	_height:100%;
+	position:relative;
+	text-align:left;
+	background:url(images/bg.gif) repeat-y left;
+}
+
+.header {
+	height:137px;
+	background:url(images/header.gif) repeat-x;
+}
+.header-bg {
+	height:137px;
+	padding:0 0 0 95px;
+	background:url(images/header-l.jpg) no-repeat;
+}
+.header .logo {
+	display:block;
+	width:312px;
+	height:137px;
+	vertical-align:top;
+}
+.header .lang {
+	position:absolute;
+	top:11px; right:252px;
+	font-size:11px;
+}
+.header .lang li {
+	float:left;
+	padding:0 0 0 24px;
+	margin:0 12px;
+	display:inline;
+}
+.header .lang li.rus {
+	background:url(images/rus.jpg) no-repeat 0 4px;
+}
+.header .lang li.eng {
+	background:url(images/eng.jpg) no-repeat 0 4px;
+}
+.header .lang li a {
+	color:#292929;
+}
+.header-chashka {
+	width:310px; height:184px;
+	position:absolute;
+	top:0; right:0;
+	background:url(images/chai.gif) no-repeat;
+}
+
+.navigation {
+	height:57px;
+	position:relative;
+	background:url(images/pxx.jpg) no-repeat bottom right;
+}
+.navigation ul {
+	margin:0 0 0 100px;
+}
+.navigation ul li {
+	float:left;
+	padding:0 21px 0 13px;
+	margin:0 0 0 -13px;
+	background:url(images/list.jpg) no-repeat 0 24px;
+}
+.navigation ul li a {
+	color:#016f93;
+	text-transform:uppercase;
+	text-decoration:none;
+	font:bold 12px/57px Times New Roman, Arial;
+}
+
+.content {
+	margin:0 0 0 100px;
+	padding:0 0 170px;
+}
+
+.left-side {
+	margin:0 257px 0 0;
+}
+
+.pages {
+	margin:0 20px 0 0;
+	padding:35px 0;
+	position:relative;
+}
+
+.pages-title {
+	padding:0 100px 0 0 ;
+}
+
+.pages-list {
+	position:absolute;
+	top:37px; right:0;
+}
+.pages-list span,
+.pages-list ul,
+.pages-list li {
+	float:left;
+}
+.pages-list li {
+	padding:0 5px 0 6px;
+	background:url(images/list2.jpg) no-repeat 0 4px;
+}
+.pages-list li.none {
+	background:none;
+}
+
+.info {
+}
+.info-list {
+	position:relative;
+	padding:10px 0;
+}
+.info strong {
+	color:#000;
+}
+.info a {
+	color:#016f93;
+}
+.info-list li {
+	position:relative;
+	padding:0 80px 0 0;
+}
+.info .info-list b a {
+	color:#980000;
+}
+.info .info-list li b {
+	float:left;
+	margin:0 3px 0 0;
+	display:inline;
+}
+.info .info-list-box {
+	position:absolute;
+	bottom:1px; right:0;
+	width:65px; height:15px;
+}
+.info .info-list-box li {
+
+}
+.info .info-list-box .ss { background:#c2dede; }
+.info .info-list-box .sss { background:#dec2dc; }
+.info .info-list-box .ssss { background:#deddc2; }
+.info .info-list-box .sssss { background:#dec7c2; }
+
+.info .info-list-box a {
+	color:#000;
+	text-decoration:none;
+	font-size:11px;
+	line-height:15px;
+	float:left;
+	height:15px;
+	margin:0 1px;
+	display:inline;
+	padding:0 4px;
+}
+
+.info .other-info {
+	padding:10px 0;
+}
+
+.right-side {
+	float:right;
+	width:238px;
+	font-size:11px;
+}
+.right-box {
+	padding:15px 15px 25px 15px;
+}
+.obshenie {
+	padding:15px 15px 25px 15px;
+	background:#e9e5e4 url(images/obsh.gif) repeat-x bottom;
+}
+.obshenie p {
+	padding:10px 0 10px 20px;
+	background:url(images/list3.gif) no-repeat 0 15px;
+}
+.obshenie .date {
+	color:#980000;
+	display:block;
+}
+.avtor {
+}
+.avtor ul {
+	margin:0 0 0 20px;
+}
+.avtor ul li {
+	padding:0 0 0 15px;
+	background:url(images/list4.gif) no-repeat 0 7px;
+}
+.avtor ul li a {
+	color:#000;
+}
+.ukazatel {
+}
+.ukazatel h2 {
+	letter-spacing:-1px;
+}
+.ukazatel ul {
+	margin:0 0 0 20px;
+}
+.ukazatel ul li {
+	padding:0 0 0 15px;
+	background:url(images/list5.gif) no-repeat 0 7px;
+}
+.ukazatel ul li a {
+	color:#016f93;
+}
+
+.ukazatel .avtor {
+}
+.ukazatel .avtor ul {
+	margin:0 0 0 20px;
+}
+.ukazatel .avtor ul li {
+	padding:0 0 0 15px;
+	background:url(images/list4.gif) no-repeat 0 7px;
+}
+.ukazatel .avtor ul li a {
+	color:#000;
+}
+
+
+
+
+.footer {
+	height:156px;
+	margin:-156px 0 0 0;
+	position:relative;
+	text-align:left;
+	background:url(images/footer.gif) repeat-x top;
+}
+.footer-bg {
+	height:156px;
+	background:url(images/f-l.gif) no-repeat top left;
+}
+.footer-bg2 {
+	height:106px;
+	padding:50px 40px 0 150px;
+	background:url(images/f-r.gif) no-repeat top right;
+}
+
+.design {
+	float:right;
+	width:280px;
+	text-align:right;
+	font-size:11px;
+	line-height:14px;
+}
+.design p {
+	padding:4px 0;
+}
+
+.list {
+	float:left;
+	width:300px;
+	padding:10px 0 0 0;
+}
+.list li {
+}
+.list li a {
+	color:#016f93;
+	display:block;
+	width:80px;
+	padding:0 0 0 20px;
+	font-size:11px;
+	line-height:20px;
+}
+.list li a.rss { background:url(images/rss.gif) no-repeat 0 3px; }
+.list li a.cont { background:url(images/cont.gif) no-repeat 0 3px; }
+.list li a.about { background:url(images/about.gif) no-repeat 0 3px; }
+
+.clear {
+	clear:both;
+	height:0;
+	font-size:0;
+	line-height:0;
+}
+.clear,
+.over {
+	overflow:hidden; _zoom:1;
+}
+.tom_on  a{
+background: #ccc;
+width: 10px;
+padding:5px;
+text-decoration: none;
+}
+
+.post-tags a {
+	color:#016f93;
+}
+
+.crumbs a {
+	color:#016f93;
+}
+
+p {
+padding: 10px 0 0 0;
+}
+
+#commentform #author, #commentform #email, #commentform #url, #commentform textarea {
+	background: #fff;
+	border: 1px solid #333;
+	padding: .2em;
+}
+
+#commentform textarea {
+	width: 400px;
+}
+
+blockquote {
+	border-left: 5px solid #ccc;
+	margin-left: 1.5em;
+	padding-left: 5px;
+}
+
+.post-categories a{
+color: black;
+}
+
+.alignright{
+display:inline;
+float:right;
+
+}
