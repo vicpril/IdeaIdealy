@@ -4,8 +4,8 @@
 function remove_menus() {
    global $menu;
 // Массив разделов меню, которые мы планируем удалить
-//   $restricted = array(__('Links'), __('Tools'), __('Comments'), __('Plugins'), __('Updates'));
-   $restricted = array();
+   $restricted = array(__('Links'), __('Tools'), __('Comments'), __('Plugins'), __('Updates'));
+//   $restricted = array();
    end($menu);
 
    while (prev($menu)) {
@@ -14,6 +14,10 @@ function remove_menus() {
            unset($menu[key($menu)]);
        }
    }
+   
+   remove_menu_page('themes.php');
+   remove_menu_page( 'index.php' );  
 }
 
 add_action('admin_menu', 'remove_menus');
+

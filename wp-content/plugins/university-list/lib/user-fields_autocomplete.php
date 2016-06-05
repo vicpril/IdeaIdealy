@@ -34,12 +34,19 @@ function user_profile_fields_autocomplete_js() {
         add_btn = '<p>\n\
                     <input id="about-auto" class="button" type="button" value="Заполнить биографию" name="autocomplite-btn">\n\
                     </p>\n\
+                    <input id="about-auto-en" class="button" type="button" value="Заполнить биографию - en" name="autocomplite-btn-en">\n\
+                    </p>\n\
                     <p><span style="color: red">При автозаполнении текущая информация в поле "Биография" будет потеряна</span></p>';
 //        $('#description').parent('td').parent('tr').append(add_btn);
         $('#userphoto').after(add_btn);
         $('input#about-auto').on('click',
                     (function (e) {
                         autocomplite_about();
+                    })
+                    );
+        $('input#about-auto-en').on('click',
+                    (function (e) {
+                        autocomplite_about_en();
                     })
                     );
         
@@ -74,7 +81,7 @@ function user_profile_fields_autocomplete_js() {
         });
         
         function autocomplite_about() {
-            if (confirm ("Текущая биография будет потеряна. Вы действительно хотите заполнить биографию пользовотеля?")) {
+            if (confirm ("Текущая РУССКАЯ биография будет потеряна. Вы действительно хотите заполнить биографию пользовотеля?")) {
                 var full_name = jQuery('input#us_full-name').val();
                 var post = jQuery('input#us_post').val();
                 var job_adress = jQuery('textarea#job_adress').val();
@@ -94,11 +101,27 @@ function user_profile_fields_autocomplete_js() {
 
                 var editor = tinymce.get('description');
                 editor.setContent(about);
-                
             }
             
-                
-           
+        };
+        
+        function autocomplite_about_en() {
+            if (confirm ("Текущая АНГЛИЙСКАЯ биография будет потеряна. Вы действительно хотите заполнить биографию пользовотеля?")) {
+                var full_name = jQuery('input#nickname').val();
+                var post = jQuery('input#us_post_en').val();
+                var job_adress = jQuery('textarea#job_adress_en').val();
+
+                if (post) {
+                    post = ', ' + post;
+                }
+                if (job_adress) {
+                    job_adress = ', ' + job_adress;
+                }
+                about = full_name + post + job_adress;
+
+                var editor = tinymce.get('description_en');
+                editor.setContent(about);
+            }
             
         };
 

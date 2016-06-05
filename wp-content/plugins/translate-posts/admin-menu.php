@@ -222,70 +222,64 @@ function translate_menu_page() {
 
 <!--Метки-->
 
-<div class="wrap">
+<!--<div class="wrap">
     <h1>Перевод меток</h1>
     
     <form method="post">
-    
-    <?php 
-        $args = array(
-            'taxonomy' => 'post_tag',
-        );
-    
-        $terms = get_terms($args);
-//        echo count($terms);
-        $count = 0;
-        $terms_id = array();
-        $no_desc = 0;
-        
-        foreach ($terms as $term) {
-//            pll_set_term_language($term->term_id, 'ru');
-//            echo pll_get_term_language($term->term_id) . ' ' . $term->name . '<br>';
-            
-            if (!$term->description) {
-                $no_desc++;
-            } else {
-                if (!array_key_exists('en', pll_get_term_translations($term->term_id))) {
-                    $count++;
-                    $terms_id[] = $term->term_id;
-                } else {
-//                    pll_save_term_translations(array('ru' => $term->term_id));
-                }
-            }
-            
-//            var_dump($term);
-//            var_dump(pll_get_term_translations($term->term_id));
-        }
-            
-        if ($no_desc) {
+    -->
+    <?php // $args = array(
+//            'taxonomy' => 'post_tag',
+//        );
+//    
+//        $terms = get_terms($args);
+//        $count = 0;
+//        $terms_id = array();
+//        $no_desc = 0;
+//        
+//        foreach ($terms as $term) {
+//            if (!$term->description) {
+//                $no_desc++;
+//            } else {
+//                if (!array_key_exists('en', pll_get_term_translations($term->term_id))) {
+//                    $count++;
+//                    $terms_id[] = $term->term_id;
+//                } else {
+//                }
+//            }
+//            
+//        }
+//            
+//        if ($no_desc) {
             ?>
-            <span>Обнаружено <?=$no_desc?> меток для заполнения описания на английском.</span> <a href="term.php?taxonomy=post_tag">Заполнить</a><br>
-            <?php
+            <!--<span>Обнаружено <?=$no_desc?> меток для заполнения описания на английском.</span> <a href="term.php?taxonomy=post_tag">Заполнить</a><br>-->
+            <?php //
         }
     ?>
         
-        <span>Обнаружено <?=$count?> меток для перевода</span>
+        <!--<span>Обнаружено <?=$count?> меток для перевода</span>-->
         
-        <?php if ($count) {
-            foreach ($terms_id as $id) {
-                ?> <input type="hidden" value="<?=$id?>" name="id[]" /> <?php
-            }
+        <?php // if ($count) {
+//            foreach ($terms_id as $id) {
+                ?> 
+    <!--<input type="hidden" value="<?=$id?>" name="id[]" />-->
+ <?php
+//            }
             
             ?>
                 
-                <p class="submit">
+<!--                <p class="submit">
                     <input type="hidden" name="action" value="tr-tag" />
                     <input type="submit" class="button-primary" value="Перевести метки" />
-                </p>
+                </p>-->
             <?php
-        }
+//        }
         ?>
-    </form>
+<!--    </form>
     
-</div>    
+</div>    -->
 
 
 
 
 <?php
-}
+//}

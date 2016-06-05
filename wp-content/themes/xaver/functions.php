@@ -9,6 +9,8 @@
 // update_option ('siteurl', 'http://ideaidealy.ru');
 // update_option ('home', 'http://ideaidealy.ru');
 
+activate_plugin('polylang/polylang.php');
+
 require_once 'string-translate.php';
 
 define('LANG', pll_current_language());

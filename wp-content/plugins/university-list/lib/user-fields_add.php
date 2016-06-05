@@ -197,6 +197,11 @@ function job_add_custom_user_profile_fields($user) {
             <th scope="row"><?php _e('Adress') ?></th>
             <td><textarea id="job_adress" class="job" name="job_adress" style="width: 350px"><?php echo get_job_adress($job_id); ?></textarea></td>
         </tr>
+        
+        <tr hidden valign="top">
+            <th scope="row"><?php _e('Adress - en') ?></th>
+            <td><textarea id="job_adress_en" class="job" name="job_adress_en" style="width: 350px"><?php echo get_job_adress_en($job_id); ?></textarea></td>
+        </tr>
     </table>
     <?php
 }
