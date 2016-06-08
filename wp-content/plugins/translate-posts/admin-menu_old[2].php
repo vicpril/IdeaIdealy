@@ -185,6 +185,65 @@ function translate_menu_page() {
 
 
 
+<!--Рубрики-->
+    
+<div class="wrap">
+    <h1>Перевод рубрик</h1>
+    
+    <form method="post">
+    
+    <?php 
+        $args = array(
+            'taxonomy' => 'category',
+            'lang' => 'ru'
+        );
+    
+        $terms = get_terms($args);
+        
+        $count = 0;
+        $terms_id = array();
+        $no_desc = 0;
+        
+        foreach ($terms as $term) {
+             if (!$term->description) {
+                $no_desc++;
+            } else {
+                if (!array_key_exists('en', pll_get_term_translations($term->term_id))) {
+                    $count++;
+                    $terms_id[] = $term->term_id;
+                }
+            }
+        }
+        
+        if ($no_desc) {
+            ?>
+            <span>Обнаружено <?=$no_desc?> рубрик для заполнения описания на английском.</span> <a href="edit-tags.php?taxonomy=category">Заполнить</a><br>
+            <?php
+        }
+
+//        echo count($terms);
+        
+        ?>
+    
+        <span>Обнаружено <?=$count?> рубрик для перевода</span>
+        
+        <?php if ($count) {
+            foreach ($terms_id as $id) {
+                ?> <input type="hidden" value="<?=$id?>" name="id[]" /> <?php
+            }
+            
+            ?>
+                
+                <p class="submit">
+                    <input type="hidden" name="action" value="tr-cat" />
+                    <input type="submit" class="button-primary" value="Перевести рубрики" />
+                </p>
+            <?php
+        }
+        ?>
+    </form>
+    
+</div>    
 
 <?php
 

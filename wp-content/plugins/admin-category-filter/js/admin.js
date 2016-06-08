@@ -36,4 +36,5 @@ jQuery(document).ready(function () {
     jQuery('input.fc-search-field').on('focusout', function (e) {
         jQuery('input#newcategory').val(e.target.value);
     });
+    
 });

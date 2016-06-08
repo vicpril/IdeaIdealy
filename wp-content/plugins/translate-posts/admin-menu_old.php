@@ -2,24 +2,6 @@
 
 add_action('admin_menu', 'register_translate_menu');
 
-function ii_translate_category($id, $cat_en ) {
-    $check = term_exists($cat_en);
-    if (!$check) {
-        $new_term_id = wp_insert_term($cat_en, 'category');
-        pll_save_term_translations(array( 'en' => $new_term_id['term_id'], 'ru' => $id ));
-        pll_set_term_language($new_term_id['term_id'], 'en');
-        return $new_term_id['term_id'];
-    } else {
-        if (is_array($check)) {
-            return $check['term_id'];
-        }else{
-            return $check;
-        }
-        
-    }
-    
-}
-
 function register_translate_menu() {
     $hook = add_submenu_page('edit.php', 'Перевод', 'Перевод', 'manage_options', 'translate', 'translate_menu_page');
 }
@@ -39,17 +21,10 @@ function translate_menu_page() {
 //                    $c = get_term($cat_en_id);
 //                    $cat_en = $c->name;
                     
-                    if (empty($cat_en_id)) {
-                        $cat_en_field = get_field('cat_en', $id);
-                        if ($cat_en_field) {
-                            $cat_en_id = ii_translate_category($cat_ru[0], $cat_en_field);
-                        }
-                    }
-                    
                     $tag_ru = wp_get_post_tags($id);
                     $tag_en_id = pll_get_term($tag_ru[0]->term_id, 'en');
-//                    $t = get_term($tag_en_id);
-//                    $tag_en = $t->name;
+                    $t = get_term($tag_en_id);
+                    $tag_en = $t->name;
                     
                     $args = array(
                         'post_title' 	=> $title_en,
@@ -59,7 +34,6 @@ function translate_menu_page() {
                             );
                     
                     $new_post_id = wp_insert_post($args);
-                    
                     
                     if (is_int($new_post_id)) {
                         pll_save_post_translations(array('ru' => $id , 'en' => $new_post_id));
@@ -121,7 +95,6 @@ function translate_menu_page() {
     
     <form method="post">
         <?php 
-        
         $args = array(
             'post_type' => 'post',
             'orderby' => 'post_date',
@@ -185,9 +158,128 @@ function translate_menu_page() {
 
 
 
+<!--Рубрики-->
+    
+<div class="wrap">
+    <h1>Перевод рубрик</h1>
+    
+    <form method="post">
+    
+    <?php 
+        $args = array(
+            'taxonomy' => 'category',
+            'lang' => 'ru'
+        );
+    
+        $terms = get_terms($args);
+        
+        $count = 0;
+        $terms_id = array();
+        $no_desc = 0;
+        
+        foreach ($terms as $term) {
+             if (!$term->description) {
+                $no_desc++;
+            } else {
+                if (!array_key_exists('en', pll_get_term_translations($term->term_id))) {
+                    $count++;
+                    $terms_id[] = $term->term_id;
+                }
+            }
+        }
+        
+        if ($no_desc) {
+            ?>
+            <span>Обнаружено <?=$no_desc?> рубрик для заполнения описания на английском.</span> <a href="edit-tags.php?taxonomy=category">Заполнить</a><br>
+            <?php
+        }
+
+//        echo count($terms);
+        
+        ?>
+    
+        <span>Обнаружено <?=$count?> рубрик для перевода</span>
+        
+        <?php if ($count) {
+            foreach ($terms_id as $id) {
+                ?> <input type="hidden" value="<?=$id?>" name="id[]" /> <?php
+            }
+            
+            ?>
+                
+                <p class="submit">
+                    <input type="hidden" name="action" value="tr-cat" />
+                    <input type="submit" class="button-primary" value="Перевести рубрики" />
+                </p>
+            <?php
+        }
+        ?>
+    </form>
+    
+</div>    
+    
+
+
+<!--Метки-->
+
+<!--<div class="wrap">
+    <h1>Перевод меток</h1>
+    
+    <form method="post">
+    -->
+    <?php // $args = array(
+//            'taxonomy' => 'post_tag',
+//        );
+//    
+//        $terms = get_terms($args);
+//        $count = 0;
+//        $terms_id = array();
+//        $no_desc = 0;
+//        
+//        foreach ($terms as $term) {
+//            if (!$term->description) {
+//                $no_desc++;
+//            } else {
+//                if (!array_key_exists('en', pll_get_term_translations($term->term_id))) {
+//                    $count++;
+//                    $terms_id[] = $term->term_id;
+//                } else {
+//                }
+//            }
+//            
+//        }
+//            
+//        if ($no_desc) {
+            ?>
+            <!--<span>Обнаружено <?=$no_desc?> меток для заполнения описания на английском.</span> <a href="term.php?taxonomy=post_tag">Заполнить</a><br>-->
+            <?php //
+        }
+    ?>
+        
+        <!--<span>Обнаружено <?=$count?> меток для перевода</span>-->
+        
+        <?php // if ($count) {
+//            foreach ($terms_id as $id) {
+                ?> 
+    <!--<input type="hidden" value="<?=$id?>" name="id[]" />-->
+ <?php
+//            }
+            
+            ?>
+                
+<!--                <p class="submit">
+                    <input type="hidden" name="action" value="tr-tag" />
+                    <input type="submit" class="button-primary" value="Перевести метки" />
+                </p>-->
+            <?php
+//        }
+        ?>
+<!--    </form>
+    
+</div>    -->
+
+
+
 
 <?php
-
-}
-
-?>
+//}
