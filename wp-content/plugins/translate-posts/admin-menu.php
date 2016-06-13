@@ -156,18 +156,21 @@ function translate_menu_page() {
             
         endwhile;
         
-        if ($no_en_title) {
+//        if ($no_en_title) {
             ?>
-            <span>Обнаружено <?=$no_en_title?> статей для заполнения названия на английском.</span> <a href="edit.php">Заполнить</a><br>
+            <!--<span>Обнаружено <?=$no_en_title?> статей для заполнения названия на английском.</span> <a href="edit.php">Заполнить</a><br>-->
             <?php
-        }
+//        }
         
         ?>
-    <span>Обнаружено <?=$count?> записей для перевода</span>
+    <span>Обнаружено <?=$count?> записей для перевода:</span>
     
     <?php if ($count) {
             foreach ($posts_id as $id) {
-                ?> <input type="hidden" value="<?=$id?>" name="id[]" /> <?php
+                ?> 
+                    <input type="hidden" value="<?=$id?>" name="id[]" />
+                    <li style="font-style: italic">"<?php echo get_post($id)->post_title; ?>"</li>
+                <?php
             }
             
             ?>
