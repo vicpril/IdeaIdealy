@@ -16,10 +16,12 @@ $file = get_post_meta($post->ID,'File Upload','single');
 
 $categories = get_the_category( $post_id );
 foreach($categories as $cat => $val)
-{	$cats[]=$val->name;}
+{
+	$cats[]=$val->name;
+}
 $cats=join(",",$cats);
 
-	echo "<div class='crumbs'><a href='/en/archive#$yearno' title='Go to this magazin materials'>Magazine ".$yearno ." year</a> &raquo; <a href='/en/nomer?yearno=$yearno&no=$no&tom=$tom' title='Go to this no.'>№" . $no . ", value " . $tom."</a> &raquo; ".$cats."</div>";
+	echo "<div class='crumbs'><a href='/archive-en/archive#$yearno' title='Go to this magazin materials'>Magazine ".$yearno ." year</a> &raquo; <a href='/archive-en/nomer?yearno=$yearno&no=$no&tom=$tom' title='Go to this no.'>№" . $no . ", vol " . $tom."</a> &raquo; ".$cats."</div>";
 
 
          ?>
@@ -60,7 +62,9 @@ $cats=join(",",$cats);
 
 
             <? if(!empty($file))
-            {            	echo "<br>You can download this material: <a href='".wp_get_attachment_url($file)."'>".basename(wp_get_attachment_url($file))."</a>";            }
+            {
+            	echo "<br>You can download this material: <a href='".wp_get_attachment_url($file)."'>".basename(wp_get_attachment_url($file))."</a>";
+            }
 
              ?>
 

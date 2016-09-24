@@ -9,12 +9,15 @@
 // update_option ('siteurl', 'http://ideaidealy.ru');
 // update_option ('home', 'http://ideaidealy.ru');
 
-activate_plugin('polylang/polylang.php');
+//activate_plugin('polylang/polylang.php');
 
-require_once 'string-translate.php';
+if (is_plugin_active('polylang/polylang.php')) {
+    
+    require_once 'string-translate.php';
 
-define('LANG', pll_current_language());
+    define('LANG', pll_current_language());
 
+}
 //remove_filter('pre_user_description', 'wp_filter_kses');  
 //add_filter( 'pre_user_description', 'wp_filter_post_kses' ); 
 

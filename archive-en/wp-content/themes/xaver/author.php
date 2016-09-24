@@ -41,7 +41,7 @@ $tom = get_post_meta($post->ID,'tom','single');
 
 	<div class="info">
 <div class="info-list">
-<a style='font-size:16px;font-weight:bold;text-decoration:none' href="<?php the_permalink() ?>" rel="bookmark" title="Перейти к материалу: <?php the_title(); ?>"><?php the_title() ?></a><? echo " / <div style='display:inline' class='crumbs'><a href='/archive#$yearno' title='Go to this materials'>Magazine ".$yearno ." year</a> &raquo; <a href='/nomer?yearno=$yearno&no=$no&tom=$tom' title='Go to this No.'>№" . $no . ", volume " . $tom."</a></div>"; ?>
+<a style='font-size:16px;font-weight:bold;text-decoration:none' href="<?php the_permalink() ?>" rel="bookmark" title="Перейти к материалу: <?php the_title(); ?>"><?php the_title() ?></a><? echo " / <div style='display:inline' class='crumbs'><a href='/archive-en/archive#$yearno' title='Go to this materials'>Magazine ".$yearno ." year</a> &raquo; <a href='/archive-en/nomer?yearno=$yearno&no=$no&tom=$tom' title='Go to this No.'>№" . $no . ", vol " . $tom."</a></div>"; ?>
 <?php //if(function_exists(wt_the_coauthors_link)): wt_the_coauthors_link("<br><b>","</b>"); endif;
 ?>
 <!--<br>

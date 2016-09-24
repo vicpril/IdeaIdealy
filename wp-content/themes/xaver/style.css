@@ -421,22 +421,27 @@ html, body {
 .header .lang {
 	position:absolute;
 	top:11px; right:252px;
-	font-size:11px;
+	font-size:16px;
 }
 .header .lang li {
 	float:left;
-	padding:0 0 0 24px;
+	padding:0 0 20px 40px;
 	margin:0 12px;
 	display:inline;
+        /*height: 60px;*/
 }
 .header .lang li.rus {
 	background:url(images/rus.jpg) no-repeat 0 4px;
+        background-size: 30%;
+        
 }
 .header .lang li.eng {
 	background:url(images/eng.jpg) no-repeat 0 4px;
+        background-size: 30%;
 }
 .header .lang li a {
 	color:#292929;
+        
 }
 .header-chashka {
 	width:310px; height:184px;
@@ -476,13 +481,14 @@ html, body {
 }
 
 .pages {
-	margin:0 20px 0 0;
-	padding:35px 0;
+	margin:0;
+	padding:0;
 	position:relative;
 }
 
 .pages-title {
-	padding:0 100px 0 0 ;
+	padding:0 100px 20px 0 ;
+        /*margin-bottom: 20px;*/
 }
 
 .pages-list {
@@ -505,11 +511,31 @@ html, body {
 	background:none;
 }
 
+.tom-paginator ul,
+.tom-paginator li {
+	margin: 0;
+        padding: 0;
+        display: inline;
+}
+
+
+
+
+
+.tom-paginator li {
+	padding:0 5px 0 6px;
+	background:url(images/list2.jpg) no-repeat 0 4px;
+        list-style: none;
+}
+.tom-paginator li.none {
+	background:none;
+}
+
 .info {
 }
 .info-list {
 	position:relative;
-	padding:10px 0;
+	padding:0 0;
 }
 .info strong {
 	color:#000;
@@ -521,9 +547,32 @@ html, body {
 	position:relative;
 	padding:0 80px 0 0;
 }
-.info .info-list b a {
-	color:#980000;
+.info-list li table{
+	/*position:relative;*/
+	padding:0 0 15px 20px;
 }
+.info-list li table tbody tr td a.aricle-title-link{
+	font-size: 18px;
+        line-height: normal;
+        text-decoration-skip:none ;
+        text-decoration-style: solid;
+        text-decoration-line: none;
+}
+
+.info-list strong ul li a{
+    font-style: italic;
+    font-size: larger;
+    color: #c35803;
+    text-decoration-style: dotted;
+    
+}
+
+/*Author*/
+.info .info-list b a { 
+	color:#980000;
+        vertical-align:bottom;
+}
+
 .info .info-list li b {
 	float:left;
 	margin:0 3px 0 0;
@@ -532,7 +581,7 @@ html, body {
 .info .info-list-box {
 	/*position:absolute;*/
 	bottom:1px; right:0;
-	width:70px; height:15px;
+	width:140px; height:15px;
 }
 .info .info-list-box li {
 
@@ -554,9 +603,9 @@ html, body {
 	line-height:15px;
 	float:left;
 	height:15px;
-	margin:0 1px;
-	display:inline;
-	padding:0 4px;
+	margin:2px 1px;
+	/*display:inline;*/
+	padding:2px 4px 2px 4px;
 }
 
 .info .other-info {

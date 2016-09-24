@@ -15,7 +15,7 @@ function remove_menus() {
        }
    }
    
-   remove_menu_page('themes.php');
+//   remove_menu_page('themes.php');
    remove_menu_page( 'index.php' );  
 }
 

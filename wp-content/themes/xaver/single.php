@@ -133,9 +133,12 @@ $cats=join(",",$cats);
        $yearno = get_post_meta($ru_id,'yearno','single');
        $no = get_post_meta($ru_id,'no','single');
        $tom = get_post_meta($ru_id,'tom','single');
-       $file = get_post_meta($ru_id,'File Upload','single');
-
        
+       $file = get_field('file_en', $ru_id);
+       
+       if (empty($file)) {
+           $file = get_post_meta($ru_id,'File Upload','single');
+       }
 
 
        $categories = get_the_category( $post_id );
@@ -145,7 +148,7 @@ $cats=join(",",$cats);
        }
        $cats=join(",",$cats);
 
-	echo "<div class='crumbs'><a href='/en/archive#$yearno' title='Go to this magazin materials'>Magazine ".$yearno ." year</a> &raquo; <a href='/en/nomer-en?yearno=$yearno&no=$no&tom=$tom' title='Go to this no.'>№" . $no . ", value " . $tom."</a> &raquo; ".$cats."</div>";
+	echo "<div class='crumbs'><a href='/en/archive#$yearno' title='Go to this magazin materials'>Magazine ".$yearno ." year</a> &raquo; <a href='/en/nomer-en?yearno=$yearno&no=$no&tom=$tom' title='Go to this no.'>№" . $no . ", vol " . $tom."</a> &raquo; ".$cats."</div>";
 
 
                 ?>

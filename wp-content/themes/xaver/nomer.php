@@ -4,7 +4,7 @@ Template Name: Nomer
 */
 get_header();
 
-    query_posts('meta_key=yearno&showposts=-1'); //сначала получим годы всех журналов, чтобы найти свежий год
+    query_posts('lang=ru&meta_key=yearno&showposts=-1'); //сначала получим годы всех журналов, чтобы найти свежий год
 	// далее по циклу вынесем все их в массив
 	$yearno=Array();
 	while (have_posts()) : the_post();

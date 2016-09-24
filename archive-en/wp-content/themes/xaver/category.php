@@ -36,7 +36,7 @@ $tom = get_post_meta($post->ID,'tom','single');
 					<li>
 					<table border=0 class="rast"><tr><td>
 
-					<a style='font-size:16px;font-weight:bold;text-decoration:none' href="<?php the_permalink() ?>" rel="bookmark" title="Go to text: <?php the_title(); ?>"><?php the_title() ?></a><? echo " / <div style='display:inline' class='crumbs'><a href='/archive#$yearno' title='Go to materials of this year'>Magazine ".$yearno ." year</a> &raquo; <a href='/en/nomer?yearno=$yearno&no=$no&tom=$tom' title='Go to this No.'>№" . $no . ", value " . $tom."</a></div>"; ?>
+					<a style='font-size:16px;font-weight:bold;text-decoration:none' href="<?php the_permalink() ?>" rel="bookmark" title="Go to text: <?php the_title(); ?>"><?php the_title() ?></a><? echo " / <div style='display:inline' class='crumbs'><a href='/archive-en/archive#$yearno' title='Go to materials of this year'>Magazine ".$yearno ." year</a> &raquo; <a href='/archive-en/nomer?yearno=$yearno&no=$no&tom=$tom' title='Go to this No.'>№" . $no . ", vol " . $tom."</a></div>"; ?>
 <?php if(function_exists(wt_the_coauthors_link)): wt_the_coauthors_link("<br><b>","</b>"); endif; ?><?php edit_post_link('Редактировать', '&nbsp;&laquo;&laquo;&nbsp;', ''); ?>
 
 

@@ -62,7 +62,7 @@
         $logo = '/images/logo_en.jpg';
     }
     ?>
-<a href="<?php bloginfo('url'); ?>/" title="<?php bloginfo('name'); ?>"><img src="<?php bloginfo('template_directory'); ?><?=$logo?>" alt="<?php bloginfo('name'); ?>" class="logo" /></a>
+<a href="<?php bloginfo('siteurl'); ?>/" title="<?php bloginfo('name'); ?>"><img src="<?php bloginfo('template_directory'); ?><?=$logo?>" alt="<?php bloginfo('name'); ?>" class="logo" /></a>
 <ul class="lang">
 <li class="rus"><a href="/" title="Русский">Русский</a></li>
 <li class="eng"><a href="/en" title="English">English</a></li><!--

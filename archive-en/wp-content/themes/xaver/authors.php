@@ -23,7 +23,8 @@ require_once(ABSPATH . WPINC . '/registration.php');
 			       //     [user_login] =>
 
 			       if(!$value->user_login)
-			       {              unset($user);			       	//echo "Zaregi ".tranaslat($value->meta_value)."<br>";
+			       {              unset($user);
+			       	//echo "Zaregi ".tranaslat($value->meta_value)."<br>";
 							$user=Array
 							(
 							    "user_login" => $value->meta_value,
@@ -38,8 +39,11 @@ require_once(ABSPATH . WPINC . '/registration.php');
 							) ;
 							$in=wp_insert_user($user);
 						//		echo "<a href='/author/".$in."'>".$value->meta_value."</a><br>";
-			       }
-			       else{			     //  	echo "<a href='/author/".$value->user_login."'>".$value->meta_value."</a><br>";			       }
+
+			       }
+			       else{
+			     //  	echo "<a href='/author/".$value->user_login."'>".$value->meta_value."</a><br>";
+			       }
 
 	        }
 
@@ -71,16 +75,20 @@ exit;
 		");
 
       foreach($au as $key=>$value)
-      {      	$names[trim($value->meta_value)][$value->post_id]=get_post($value->post_id);
-      	ksort($names[$value->meta_value]);      }
+      {
+      	$names[trim($value->meta_value)][$value->post_id]=get_post($value->post_id);
+      	ksort($names[$value->meta_value]);
+      }
 
 
           //  print_r($names);exit;
       foreach($names as $name => $posts)
-      {      		echo "<a href='' onClick='$(\"#".md5($name)."\").toggle(\"slow\");return false;' style='color:black;text-decoration:none;font-size:16px;padding:4px;'>".$name."</a><br>
+      {
+      		echo "<a href='' onClick='$(\"#".md5($name)."\").toggle(\"slow\");return false;' style='color:black;text-decoration:none;font-size:16px;padding:4px;'>".$name."</a><br>
       		<div style='padding-top:10px;padding-left:10px;display:none;border:none;' id='".md5($name)."'>";
       		foreach($posts as $post)
-      		{         			// check for thumbnail
+      		{
+         			// check for thumbnail
 				$yearno = get_post_meta($post->ID,'yearno','single');
 				$no = get_post_meta($post->ID,'no','single');
 				$tom = get_post_meta($post->ID,'tom','single');
@@ -93,7 +101,7 @@ exit;
 					<li>
 					<table border=0 class="rast"><tr><td>
 
-					<a style='font-size:16px;font-weight:bold;text-decoration:none' href="<?php the_permalink() ?>" rel="bookmark" title="Перейти к материалу: <?php the_title(); ?>"><?php the_title() ?></a><? echo " / <div style='display:inline' class='crumbs'><a href='/archive#$yearno' title='Перейти к номерам данного года'>Журнал ".$yearno ." года</a> &raquo; <a href='/nomer?yearno=$yearno&no=$no&tom=$tom' title='Перейти к номеру журнала'>№" . $no . ", Том " . $tom."</a></div>"; ?>
+					<a style='font-size:16px;font-weight:bold;text-decoration:none' href="<?php the_permalink() ?>" rel="bookmark" title="Перейти к материалу: <?php the_title(); ?>"><?php the_title() ?></a><? echo " / <div style='display:inline' class='crumbs'><a href='/archive-en/archive#$yearno' title='Перейти к номерам данного года'>Журнал ".$yearno ." года</a> &raquo; <a href='/archive-en/nomer?yearno=$yearno&no=$no&tom=$tom' title='Перейти к номеру журнала'>№" . $no . ", Том " . $tom."</a></div>"; ?>
 <?php edit_post_link('Редактировать', '<br><b>', '</b>'); ?>
 
 
@@ -178,8 +186,10 @@ exit;
 
 
                       <?
-      		}
-      		echo "</div><br>";      }
+
+      		}
+      		echo "</div><br>";
+      }
 
       // print_r($names);
        ?>

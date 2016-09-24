@@ -5,8 +5,8 @@
 
  <div class="info">
                    <p style="float:right;display:inline;padding-right:40px;padding-top:5px" class="info-list-box2">
-                       <a href="" class="ss">A (annotation)</a>
-                       <a href="" title="Т" class="sss">Т (text)</a>
+<!--                       <a href="" class="ss">A (annotation)</a>
+                       <a href="" title="Т" class="sss">Т (text)</a>-->
                    </p>
 
                     <div class="info-list"><ul>
@@ -44,10 +44,10 @@
                 //No's link
                 if ($yearno < 2016) {
                     $link_archive = "<a href='" . home_url('archive-en') . "/archive#$yearno' title='Go to this magazin materials'>Magazine ".$yearno ." year</a>";
-                    $link_no = "<a href='" . home_url('archive-en') . "/nomer?yearno=$yearno&no=$no&tom=$tom' title='Go to this no.'>№" . $no . ", value " . $tom."</a></div>";
+                    $link_no = "<a href='" . home_url('archive-en') . "/nomer?yearno=$yearno&no=$no&tom=$tom' title='Go to this no.'>№" . $no . ", vol " . $tom."</a></div>";
                 } else {
                     $link_archive = "<a href='/en/archive-2#$yearno' title='Go to this magazin materials'>Magazine ".$yearno ." year</a>";
-                    $link_no = "<a href='/nomer-en?yearno=$yearno&no=$no&tom=$tom' title='Go to this no.'>№" . $no . ", value " . $tom."</a></div>";
+                    $link_no = "<a href='/nomer-en?yearno=$yearno&no=$no&tom=$tom' title='Go to this no.'>№" . $no . ", vol " . $tom."</a></div>";
                 }
 
                    ?>
@@ -111,7 +111,10 @@
 						$excerpt["js"]="onClick='return false;'";
 					}
 
-					$text['attach']=get_post_meta($post->ID,"File Upload",true);
+					$text['attach']=get_field('file_en', $ru_id);
+                    if (empty($text['attach'])) {
+                        $text['attach']=get_post_meta($post->ID,"File Upload",true);
+                    }
                     
 //					if(!empty($post->post_content) || !empty($text['attach']))
 					if(!empty($text['attach']))
@@ -139,20 +142,23 @@
                 $tags["no"]="1";
                 $tags["js"]="onClick='return false;'";
             endif; ?>
-
-                     </td><td align=right>
-
-					<p class="info-list-box" id="<?=$post->ID?>_line">
+                        
+                    <br><div class="info-list-box" id="<?=$post->ID?>_line">
                        <? if(!isset($excerpt['no'])){ ?>
-						<a href="" <?=$excerpt["js"]?> title="Annotation" class="ss<?=$excerpt["no"]?>">А</a>
+						<a href="" <?=$excerpt["js"]?> title="Annotation" class="ss<?=$excerpt["no"]?>">Аnnotation</a>
 					<? } ?>
 					
 					<? if(!isset($text['no'])){ ?>
-						 <a href="<?=$text["link"]?>" <?=$text["js"]?> title="Text" class="sss<?=$text["no"]?>">Т</a>
+						 <a href="<?=$text["link"]?>" <?=$text["js"]?> title="Text" class="sss<?=$text["no"]?>">Тext</a>
 					<? } ?>
                         <!--<a href="" <?=$tags["js"]?> title="Классификатор" class="ssss<?=$tags["no"]?>">К</a>-->
                         <!--<a href="" title="Отклики" <?=$recen["js"]?> class="sssss<?=$recen["no"]?>">О</a></p>-->
-                      </td></tr><tr><td colspan=2>
+                    </div> 
+                         
+                         
+                     </td><td align=right>
+
+					 </td></tr><tr><td colspan=2>
                      <?php if(get_field('udk', $post->ID)) : ?><div style="padding:10px;border-bottom:dotted 1px;display:none" id="<?=$post->ID?>_udk"><b style="margin-left:-10px">УДК:</b> <?=get_field('udk', $post->ID);?></div><?php endif; ?>
                      <div style="padding:10px;border-bottom:dotted 1px;display:none" id="<?=$post->ID?>_ex"><b style="margin-left:-10px">Annotation:</b> <br><div><?=$excerpt["text"]?></div></div>
                      <?php if(get_field('keywords_en', $post->ID)) : ?><div style="padding:10px;border-bottom:dotted 1px;display:none" id="<?=$post->ID?>_kw"><b style="margin-left:-10px">Keywords:</b> <?=get_field('keywords_en', $post->ID)?></div><?php endif; ?>

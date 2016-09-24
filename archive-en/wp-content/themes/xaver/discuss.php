@@ -26,7 +26,7 @@ if ($r->have_posts()) : while ($r->have_posts()) : $r->the_post();
 $no = get_post_meta($post->ID,'no','single');
 $tom = get_post_meta($post->ID,'tom','single');
 
-                   ?> <p class="info"><span class="date"><?php the_time('j F Y') ?></span> / <a style="font-size:16px;" href="<?php the_permalink() ?>" rel="bookmark" title="Go to material: <?php the_title(); ?>. Magazine <?=$yearno?> year, №<?=$no?>, value <?=$tom?>"><?php the_title() ?></a> &raquo; <? echo "<a href='/en/archive#$yearno' title='Go to this year materials'>Magazine ".$yearno ." year</a> &raquo; <a href='/en/nomer?yearno=$yearno&no=$no&tom=$tom' title='Go to this No.'>№" . $no . ", value " . $tom."</a>"; ?></p>  <?
+                   ?> <p class="info"><span class="date"><?php the_time('j F Y') ?></span> / <a style="font-size:16px;" href="<?php the_permalink() ?>" rel="bookmark" title="Go to material: <?php the_title(); ?>. Magazine <?=$yearno?> year, №<?=$no?>, value <?=$tom?>"><?php the_title() ?></a> &raquo; <? echo "<a href='/archive-en/archive#$yearno' title='Go to this year materials'>Magazine ".$yearno ." year</a> &raquo; <a href='/archive-en/nomer?yearno=$yearno&no=$no&tom=$tom' title='Go to this No.'>№" . $no . ", vol " . $tom."</a>"; ?></p>  <?
 	endwhile;
 
 else:
