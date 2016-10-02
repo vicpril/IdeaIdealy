@@ -6,7 +6,7 @@ get_header();
 
 
 
-        <h1><?php the_title(); ?></h1>
+        <h1 class="ii-page-title"><?php the_title(); ?></h1>
         <?php if (is_user_logged_in()) {
                     echo "<a class='edit-link' href='" . home_url() . "/wp-admin/users.php?page=redcolegia'>Редактировать страницу</a>";
                 } ?>

@@ -8,7 +8,7 @@ if (LANG == 'en') {
 
 <?php get_header(); ?>
 
-<h1><? single_cat_title('Тема ' )?></h1>
+<h1 class="ii-page-title"><? single_cat_title('Тема ' )?></h1>
 
 
 

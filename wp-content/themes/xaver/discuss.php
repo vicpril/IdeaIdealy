@@ -9,7 +9,7 @@ $edit_post=current_user_can('edit_posts');
 ?>
 
 
-<h1>Круглые столы</h1>
+<h1 class="ii-page-title">Круглые столы</h1>
 <br>
 <?
 

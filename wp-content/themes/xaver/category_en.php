@@ -1,7 +1,7 @@
 
 <?php get_header(); ?>
 
-<h1><? single_cat_title('Topic: ' )?></h1>
+<h1 class="ii-page-title"><? single_cat_title('Topic: ' )?></h1>
 
  <div class="info">
                    <p style="float:right;display:inline;padding-right:40px;padding-top:5px" class="info-list-box2">

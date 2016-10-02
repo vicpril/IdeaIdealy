@@ -6,7 +6,7 @@ get_header();
 
 
 
-	 <h1><?php the_title(); ?></h1>
+	 <h1 class="ii-page-title"><?php the_title(); ?></h1>
 	<?php edit_post_link(__('Edit This')); ?>
           <br>
 	<div class="storycontent">

@@ -177,7 +177,7 @@ $cats=join(",",$cats);
 
 
                <?php if(function_exists(wt_the_coauthors_link)): wt_the_coauthors_link("<b>","</b><br>", 'en', $ru_id); endif; ?>
-                     <br>            <?php edit_post_link('Edit', '', ''); ?>
+                     <br>            <?php edit_post_link('Edit', '', '', $ru_id); ?>
 
                  <?php 
                  $content=$post_ru->post_content;

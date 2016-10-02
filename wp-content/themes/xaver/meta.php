@@ -39,8 +39,8 @@ if($yearno>2000 and $no>0){
 ?>
 
 	<div class="pages">
-		<div class="pages-title">
-            <h1>Идеи и Идеалы №<?=$no?><?=$nomar?>, <?=$yearno?>г. 
+		<!--<div class="pages-title">-->
+            <h1 class="ii-page-title">Идеи и Идеалы №<?=$no?><?=$nomar?>, <?=$yearno?>г. 
                 <span class="tom-paginator">Том: 
                     <ul class="tom-paginator">
                         <li <?=$class?>><a href="?no=<?=$no?>&yearno=<?=$yearno?>&tom=1&por=<?=$noma?>" title="Том 1">1</a></li>
@@ -56,7 +56,7 @@ if($yearno>2000 and $no>0){
         
 				
         
-	</div>
+	<!--</div>-->
 
 			<div class="pages-title">
 				<h1>Содержание</h1>
@@ -203,21 +203,21 @@ if($yearno>2000 and $no>0){
 
                  <?php
 //				if(function_exists(wt_the_coauthors_link) && (array_pop(get_post_custom_values('stol')) !== 'yes')): wt_the_coauthors_link("<b>","</b>"); endif;
-					 //the_author();
-					  ?><a class="aricle-title-link" href="<?php the_permalink() ?>" rel="bookmark" title="Перейти к материалу: <?php the_title(); ?>"><?php the_title() ?></a>     &nbsp;&nbsp;&nbsp;&nbsp;<?php edit_post_link('Редактировать', '&nbsp;&laquo;&laquo;&nbsp;', ''); ?>
+					 
+				?>
+                 <a class="aricle-title-link" href="<?php the_permalink() ?>" rel="bookmark" title="Перейти к материалу: <?php the_title(); ?>"><?php the_title() ?></a>     &nbsp;&nbsp;&nbsp;&nbsp;<?php edit_post_link('Редактировать', '&nbsp;&laquo;&laquo;&nbsp;', ''); ?>
                       
-                        
+                      <br><?php 
+                    //the_author();
+                if(function_exists(wt_the_coauthors_link) && (array_pop(get_post_custom_values('stol')) !== 'yes')): wt_the_coauthors_link("<b>","</b>"); endif;
+                    ?>  
+                 
                         
                         <!--DOI-->
                                 <?php 
                                     $doi = get_field('doi', $post->ID);
                                     if(!empty($doi)){ 
                                  ?>
-                                <br>
-                                    <?php 
-                                if(function_exists(wt_the_coauthors_link) && (array_pop(get_post_custom_values('stol')) !== 'yes')): wt_the_coauthors_link("<b>","</b>"); endif;
-                                    ?>
-                                    
                                 <br>
                                 
                                 <b>DOI: </b><a style="color:grey; text-decoration:underline;" href="http://dx.doi.org/<?php echo $doi;?>" target="_blank"><?php echo $doi; ?></a>

@@ -7,7 +7,7 @@ get_header();
 require_once(ABSPATH . WPINC . '/registration.php');
 ?>
 
-   <h1 class="title">Our authors</h1>  <br>
+   <h1 class="ii-page-title">Our authors</h1>  <br>
 <?
        global $wpdb;
      $au = $wpdb->get_results("

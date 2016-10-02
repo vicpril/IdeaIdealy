@@ -34,8 +34,8 @@ if($yearno>2000 and $no>0){
 ?>
 
 	<div class="pages">
-		<div class="pages-title">
-		<h1>Ideas and Ideals №<?=$no?><?=$nomar?>, year <?=$yearno?>
+		<!--<div class="pages-title">-->
+		<h1 class="ii-page-title">Ideas and Ideals №<?=$no?><?=$nomar?>, year <?=$yearno?>
         <span class="tom-paginator">Vol: 
         <ul class="tom-paginator">
 					<li <?=$class?>><a href="?no=<?=$no?>&yearno=<?=$yearno?>&tom=1&por=<?=$noma?>" title="Vol 1">1</a></li>
@@ -47,7 +47,7 @@ if($yearno>2000 and $no>0){
         <input hidden id="no" value="<?=$no?>" />
         <input hidden id="nomar" value="<?=$nomar?>" />
         <input hidden id="yearno" value="<?=$yearno?>" />
-	</div>
+	<!--</div>-->
 
 			<div class="pages-title">
 				<h1>Contents</h1>
@@ -130,18 +130,18 @@ if($yearno>2000 and $no>0){
 					 
 					  ?><a class="aricle-title-link"  href="<?=$permalink?>" rel="bookmark" title="Go to the article: <?=$title_en?>"><?=$title_en?></a>     &nbsp;&nbsp;&nbsp;&nbsp;<?php edit_post_link('Edit', '&nbsp;&laquo;&laquo;&nbsp;', ''); ?>
                       
-                      
+                    <br>
+                    <?php 
+                    //the_author();
+                            if(function_exists(wt_the_coauthors_link) && (array_pop(get_post_custom_values('stol')) !== 'yes')): wt_the_coauthors_link("<b>","</b>", 'en', $post->ID); endif;
+
+                    ?>  
                     <!--DOI-->
                                 <?php 
                                     $doi = get_field('doi', $post->ID);
                                     if(!empty($doi)){ 
                                  ?>
-                    <br>
-                                    <?php 
-                                    //the_author();
-                               				if(function_exists(wt_the_coauthors_link) && (array_pop(get_post_custom_values('stol')) !== 'yes')): wt_the_coauthors_link("<b>","</b>", 'en', $post->ID); endif;
-     
-                                    ?>
+                    
                     <br>
                     <b>DOI: </b><a style="color:grey; text-decoration:underline;" href="http://dx.doi.org/<?php echo $doi;?>" target="_blank"><?php echo $doi; ?></a>
                     

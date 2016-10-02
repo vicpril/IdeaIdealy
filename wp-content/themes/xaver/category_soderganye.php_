@@ -6,7 +6,7 @@ get_header();
 ?>
 <div class="pages">
 	<div class="pages-title">
-		<h1>Содержание</h1> <?=category_description();?>
+		<h1 class="ii-page-title">Содержание</h1> <?=category_description();?>
 	</div>
 	<div class="pages-list">
 		<span>Том:</span>

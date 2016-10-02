@@ -23,9 +23,11 @@ get_header();
 }
 </style>
 
-<div class="pages-title">
-		<h1>Архив</h1>
-	</div><ul style="padding-left:40px;padding-top:15px;">
+<!--<div class="pages-title">-->
+		<h1 class="ii-page-title">Архив</h1>
+	<!--</div>-->
+    <ul style="padding-top:15px; text-align: center;">
+	<!--</div><ul style="padding-left:40px;padding-top:15px">-->
 <?
 
 $edit_post=current_user_can('edit_posts');

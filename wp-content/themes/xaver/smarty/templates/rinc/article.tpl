@@ -44,7 +44,7 @@ layout-grid-mode:char'><span style='font-size:10.0pt;mso-fareast-font-family:
             <p class=MsoNormal style='text-indent:0.0cm;tab-stops:49.6pt 154.5pt;
             layout-grid-mode:char'><span
             class=SpellE><span style='font-size:10.0pt;mso-fareast-font-family:"Times New Roman";
-            mso-fareast-language:RU'>{$jobs[0].job_name}, </p><p class=MsoNormal style='text-indent:0.0cm;tab-stops:49.6pt 154.5pt;
+            mso-fareast-language:RU'>{$jobs[0].job_name} </p><p class=MsoNormal style='text-indent:0.0cm;tab-stops:49.6pt 154.5pt;
             layout-grid-mode:char'><span
             class=SpellE><span style='font-size:10.0pt;mso-fareast-font-family:"Times New Roman";
             mso-fareast-language:RU'>{$jobs[0].job_adress}</p>
@@ -74,7 +74,7 @@ layout-grid-mode:char'><span style='font-size:10.0pt;mso-fareast-font-family:
             layout-grid-mode:char'><sup><span style='font-size:10.0pt;mso-fareast-font-family:
             "Times New Roman";mso-fareast-language:RU'>{$i+1}</span></sup><span
             style='font-size:10.0pt;mso-fareast-font-family:"Times New Roman";mso-fareast-language:
-            RU'>{$job.job_name}, </p><p class=MsoNormal style='tab-stops:49.6pt 154.5pt;
+            RU'>{$job.job_name} </p><p class=MsoNormal style='tab-stops:49.6pt 154.5pt;
             layout-grid-mode:char'><sup></sup><span
             style='font-size:10.0pt;mso-fareast-font-family:"Times New Roman";mso-fareast-language:
             RU'>{$job.job_adress}<o:p></o:p></span></p>
@@ -259,7 +259,7 @@ mso-bidi-font-size:11.0pt;mso-ansi-language:EN-US'> <span lang=EN-US style="text
         name="OLE_LINK2"></a><a name="OLE_LINK1"><span style='mso-bookmark:OLE_LINK2'></span></a><span
         class=SpellE><span style='mso-bookmark:OLE_LINK1'><span style='mso-bookmark:
         OLE_LINK2'><span style='font-size:10.0pt;mso-fareast-font-family:"Times New Roman";
-        mso-fareast-language:RU'>{$jobs[0].job_name_en}, </p><p class=MsoNormal style='tab-stops:49.6pt 154.5pt;layout-grid-mode:char'><a
+        mso-fareast-language:RU'>{$jobs[0].job_name_en} </p><p class=MsoNormal style='tab-stops:49.6pt 154.5pt;layout-grid-mode:char'><a
         name="OLE_LINK2"></a><a name="OLE_LINK1"><span style='mso-bookmark:OLE_LINK2'></span></a><span
         class=SpellE><span style='mso-bookmark:OLE_LINK1'><span style='mso-bookmark:
         OLE_LINK2'><span style='font-size:10.0pt;mso-fareast-font-family:"Times New Roman";
@@ -289,7 +289,7 @@ mso-bidi-font-size:11.0pt;mso-ansi-language:EN-US'> <span lang=EN-US style="text
             layout-grid-mode:char'><sup><span style='font-size:10.0pt;mso-fareast-font-family:
             "Times New Roman";mso-fareast-language:RU'>{$i+1}</span></sup><span
             style='font-size:10.0pt;mso-fareast-font-family:"Times New Roman";mso-fareast-language:
-            RU'>{$job.job_name_en}, </p><p class=MsoNormal style='tab-stops:49.6pt 154.5pt;
+            RU'>{$job.job_name_en} </p><p class=MsoNormal style='tab-stops:49.6pt 154.5pt;
             layout-grid-mode:char'><sup></sup><span
             style='font-size:10.0pt;mso-fareast-font-family:"Times New Roman";mso-fareast-language:
             RU'>{$job.job_adress_en}<o:p></o:p></span></p>
@@ -302,8 +302,8 @@ mso-bidi-font-size:11.0pt;mso-ansi-language:EN-US'> <span lang=EN-US style="text
         
 
 {*///////////////Список email///////////////*}
-{*{if $email_on}*}
-{if false}
+{if $email_on}
+{*{if false}*}
         <span style='mso-bookmark:OLE_LINK2'></span><span style='mso-bookmark:OLE_LINK1'></span>
 
         <p class=MsoNormal style='text-indent:1.0cm;tab-stops:49.6pt 154.5pt;

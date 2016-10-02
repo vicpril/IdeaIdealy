@@ -36,7 +36,8 @@ if (isset($_POST['mag_issn']) && !empty($_POST['mag_issn'])) {
 }else{
     $issn = get_ISSN($postID_arr);
     if (!empty($issn)) {
-        $mag_issn = 'ISSN '. $issn;
+//        $mag_issn = 'ISSN '. $issn;
+        $mag_issn = $issn;
     }else{
         $mag_issn = '';
     }
@@ -133,13 +134,17 @@ foreach ($postID_arr as $postID) {
     $art_udk = get_field('udk', $postID);
     $art_doi = get_field('doi', $postID);
     $art_keywords = get_field('keywords', $postID);
+    $art_keywords = rtrim($art_keywords);
+    $art_keywords = rtrim($art_keywords, ' .');
+    
     $art_lit = get_field('literatura', $postID);
     $art_date_arrival = get_field('date_arrival', $postID);
     $art_cat_en = get_field('cat_en', $postID);
     $art_title_en = get_field('title_en', $postID);
     $art_notice_en = get_field('annotation_en', $postID);
     $art_fin = get_field('financ', $postID);
-    $art_key_en = get_field('key_en', $postID);
+    $art_key_en = rtrim(rtrim(get_field('key_en', $postID)), ' .');
+    
 //    $art_text = get_field('text', $postID);
     $content = $post->post_content;
     $content=str_replace("\n","<p>",$content);

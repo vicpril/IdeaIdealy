@@ -381,7 +381,7 @@ body {
 	color:#4e4e4e;
 	text-align:center;
 	font:normal 12px/18px Tahoma, Verdana, Arial;
-	background:#fff url(images/bg2.gif) repeat-y right;
+	/*background:#fff url(images/bg2.gif) repeat-y right;*/
 	min-width:1000px;
 	width:100%;
 	width: expression(document.body.clientWidth < 1000 ? "100%" : "1000px")
@@ -448,36 +448,94 @@ html, body {
 	position:absolute;
 	top:0; right:0;
 	background:url(images/chai.gif) no-repeat;
+        /*z-index: -1;*/
+        background-color: transparent;
+}
+
+
+
+.ii-page-title {
+    text-align: center;
+    font-size:24px;
+    text-decoration:none;
+    color: #1c1c1c;
+    text-transform:uppercase;
+    padding-bottom: 10px;
 }
 
 .navigation {
-	height:57px;
+	height:auto;
+        padding: 5px 0 5px 0;
 	position:relative;
-	background:url(images/pxx.jpg) no-repeat bottom right;
+	/*background:url(images/pxx.jpg) no-repeat bottom right;*/
+	vertical-align: central;
+        text-align: center;
+        
 }
 .navigation ul {
-	margin:0 0 0 100px;
+	margin:0px 0 0 100px;
+        vertical-align: central;
+        /*padding: 0 0 10px 0;*/
+        
 }
-.navigation ul li {
-	float:left;
+/*.navigation ul li {
+	float: left;
+        display: inline-block;
 	padding:0 21px 0 13px;
 	margin:0 0 0 -13px;
-	background:url(images/list.jpg) no-repeat 0 24px;*/
+	background:url(images/list.jpg) no-repeat 0 24px;
 }
 .navigation ul li a {
 	color:#016f93;
 	text-transform:uppercase;
 	text-decoration:none;
 	font:bold 12px/57px Times New Roman, Arial;
+}*/
+.navigation ul li {
+    vertical-align: central;
+	/*float: left;*/
+        display: inline-block;
+	line-height:20px;
+	padding:0 25px 0 25px;
+	background:url(images/bank.gif) no-repeat 0 2px;
 }
+.navigation ul li a {
+	font-size:18px;
+	text-decoration:none;
+	color:#836F69;
+	text-transform:uppercase;
+}
+.navigation ul li a:hover {
+	font-size:18px;
+	text-decoration:none;
+	color: #980000;
+	text-transform:uppercase;
+}
+
+/*.ukazatel ul.menu li {*/
+/*	line-height:20px;
+	padding:0 0 0 25px;
+	background:url(images/bank.gif) no-repeat 0 2px;*/
+/*}*/
+/*.ukazatel ul.menu li a{*/
+/*	font-size:18px;
+	text-decoration:none;
+	color:#836F69;
+	text-transform:uppercase;*/
+/*}*/
+
 
 .content {
 	margin:0 0 0 100px;
 	padding:0 0 170px;
+        background:url(images/hori_line.gif) repeat-x top, url(images/bg2.gif) repeat-y right;
+        
+        
 }
 
 .left-side {
-	margin:0 257px 0 0;
+	margin:15px 257px 0 0;
+        /*background:url(images/bg3.gif) repeat-y right;*/
 }
 
 .pages {
@@ -615,14 +673,20 @@ html, body {
 .right-side {
 	float:right;
 	width:238px;
+        height: auto;
 	font-size:11px;
+        background:transparent url(images/hori_line.gif) repeat-x top;
+        
 }
 .right-box {
 	padding:15px 15px 25px 15px;
 }
 .obshenie {
 	padding:15px 15px 25px 15px;
-	background:#e9e5e4 url(images/obsh.gif) repeat-x bottom;
+        background:url(images/hori_line.gif) repeat-x top;
+	background-color:#e9e5e4;
+        
+        
 }
 .obshenie p {
 	padding:10px 0 10px 20px;
@@ -822,6 +886,12 @@ text-align:right;
 	color:#836F69;
 	text-transform:uppercase;
 }
+.ukazatel ul.menus-plus-widget li a:hover{
+	font-size:18px;
+	text-decoration:none;
+	color: #980000;
+	text-transform:uppercase;
+}
 
 .ukazatel ul.menu  {
 	padding:0;
@@ -838,6 +908,12 @@ text-align:right;
 	font-size:18px;
 	text-decoration:none;
 	color:#836F69;
+	text-transform:uppercase;
+}
+.ukazatel ul.menu li a:hover{
+	font-size:18px;
+	text-decoration:none;
+	color: #980000;
 	text-transform:uppercase;
 }
 

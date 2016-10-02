@@ -147,7 +147,7 @@ function wp_list_authors2_en($args = '') {
 
      */
     $authors = $wpdb->get_results("SELECT ID, user_nicename,meta_value,meta_key from $wpdb->users left join $wpdb->usermeta on ($wpdb->usermeta.user_id=$wpdb->users.ID)
-	" . ($exclude_admin ? "WHERE user_login <> 'admin' and " : '') . " meta_key='first_name' ORDER BY meta_value ASC ");
+	" . ($exclude_admin ? "WHERE user_login <> 'admin' and " : '') . " meta_key='first_name' ORDER BY user_login ASC ");
 
     $author_count = array();
     foreach ((array) $wpdb->get_results("SELECT DISTINCT post_author, COUNT(ID) AS count FROM $wpdb->posts WHERE post_type = 'post' AND " . get_private_posts_cap_sql('post') . " GROUP BY post_author") as $row) {

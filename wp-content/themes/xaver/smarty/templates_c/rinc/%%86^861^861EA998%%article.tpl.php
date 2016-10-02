@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.28, created on 2016-04-23 13:09:21
+<?php /* Smarty version 2.6.28, created on 2016-10-02 12:36:36
          compiled from article.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('modifier', 'strlen', 'article.tpl', 35, false),array('modifier', 'count', 'article.tpl', 35, false),)), $this); ?>
@@ -57,7 +57,7 @@ layout-grid-mode:char'><span style='font-size:10.0pt;mso-fareast-font-family:
             layout-grid-mode:char'><span
             class=SpellE><span style='font-size:10.0pt;mso-fareast-font-family:"Times New Roman";
             mso-fareast-language:RU'><?php echo $this->_tpl_vars['jobs'][0]['job_name']; ?>
-, </p><p class=MsoNormal style='text-indent:0.0cm;tab-stops:49.6pt 154.5pt;
+ </p><p class=MsoNormal style='text-indent:0.0cm;tab-stops:49.6pt 154.5pt;
             layout-grid-mode:char'><span
             class=SpellE><span style='font-size:10.0pt;mso-fareast-font-family:"Times New Roman";
             mso-fareast-language:RU'><?php echo $this->_tpl_vars['jobs'][0]['job_adress']; ?>
@@ -100,7 +100,7 @@ layout-grid-mode:char'><span style='font-size:10.0pt;mso-fareast-font-family:
 </span></sup><span
             style='font-size:10.0pt;mso-fareast-font-family:"Times New Roman";mso-fareast-language:
             RU'><?php echo $this->_tpl_vars['job']['job_name']; ?>
-, </p><p class=MsoNormal style='tab-stops:49.6pt 154.5pt;
+ </p><p class=MsoNormal style='tab-stops:49.6pt 154.5pt;
             layout-grid-mode:char'><sup></sup><span
             style='font-size:10.0pt;mso-fareast-font-family:"Times New Roman";mso-fareast-language:
             RU'><?php echo $this->_tpl_vars['job']['job_adress']; ?>
@@ -287,7 +287,7 @@ mso-bidi-font-size:11.0pt;mso-ansi-language:EN-US'> <span lang=EN-US style="text
         class=SpellE><span style='mso-bookmark:OLE_LINK1'><span style='mso-bookmark:
         OLE_LINK2'><span style='font-size:10.0pt;mso-fareast-font-family:"Times New Roman";
         mso-fareast-language:RU'><?php echo $this->_tpl_vars['jobs'][0]['job_name_en']; ?>
-, </p><p class=MsoNormal style='tab-stops:49.6pt 154.5pt;layout-grid-mode:char'><a
+ </p><p class=MsoNormal style='tab-stops:49.6pt 154.5pt;layout-grid-mode:char'><a
         name="OLE_LINK2"></a><a name="OLE_LINK1"><span style='mso-bookmark:OLE_LINK2'></span></a><span
         class=SpellE><span style='mso-bookmark:OLE_LINK1'><span style='mso-bookmark:
         OLE_LINK2'><span style='font-size:10.0pt;mso-fareast-font-family:"Times New Roman";
@@ -329,7 +329,7 @@ mso-bidi-font-size:11.0pt;mso-ansi-language:EN-US'> <span lang=EN-US style="text
 </span></sup><span
             style='font-size:10.0pt;mso-fareast-font-family:"Times New Roman";mso-fareast-language:
             RU'><?php echo $this->_tpl_vars['job']['job_name_en']; ?>
-, </p><p class=MsoNormal style='tab-stops:49.6pt 154.5pt;
+ </p><p class=MsoNormal style='tab-stops:49.6pt 154.5pt;
             layout-grid-mode:char'><sup></sup><span
             style='font-size:10.0pt;mso-fareast-font-family:"Times New Roman";mso-fareast-language:
             RU'><?php echo $this->_tpl_vars['job']['job_adress_en']; ?>
@@ -342,7 +342,7 @@ mso-bidi-font-size:11.0pt;mso-ansi-language:EN-US'> <span lang=EN-US style="text
 <?php endif; ?>
         
 
-<?php if (false): ?>
+<?php if ($this->_tpl_vars['email_on']): ?>
         <span style='mso-bookmark:OLE_LINK2'></span><span style='mso-bookmark:OLE_LINK1'></span>
 
         <p class=MsoNormal style='text-indent:1.0cm;tab-stops:49.6pt 154.5pt;
