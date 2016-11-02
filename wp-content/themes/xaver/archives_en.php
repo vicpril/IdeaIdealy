@@ -28,7 +28,7 @@ get_header();
 	<!--</div>-->
 <ul style="padding-top:15px; text-align: center;">
 <!--<ul style="padding-left:40px;padding-top:15px;">-->
-<?
+<?php
 
 $edit_post=current_user_can('edit_posts');
 

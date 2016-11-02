@@ -41,7 +41,7 @@ $cats=join(",",$cats);
                                     if(!empty($doi)){ 
                                  ?>
          <div>
-         <b>DOI: </b><a href="http://dx.doi.org/<?php echo $doi;?>" target="_blank"><?php echo $doi; ?></a>
+         <b>DOI: </b><a href="http://dx.doi.org/<?php echo $doi;?>" target="_blank"><?php echo 'http://dx.doi.org/' . $doi; ?></a>
          </div>       <br>
                     
                                 <?php } ?>
@@ -166,7 +166,7 @@ $cats=join(",",$cats);
                                            if(!empty($doi)){ 
                                         ?>
                 <div>
-                <b>DOI: </b><a href="http://dx.doi.org/<?php echo $doi;?>" target="_blank"><?php echo $doi; ?></a>
+                <b>DOI: </b><a href="http://dx.doi.org/<?php echo $doi;?>" target="_blank"><?php echo 'http://dx.doi.org/' . $doi; ?></a>
                 </div>       <br>
 
                                        <?php } ?>

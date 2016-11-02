@@ -184,10 +184,22 @@ else
             endwhile;
             
             if ($archive) {
+                
+                $initials = explode('.', $curauth->us_initials_en);
+                $f_name = $initials[0];
+                $s_name = $initials[1];
+                
+                $name_link = $curauth->us_name_en . '-' . $f_name ;
+                
+                if (!empty($s_name)) {
+                    $name_link .= '-' . $s_name;
+                }
                 ?>
                 <!--<h1 class="title">English Archive (Until 2016 year)</h1>-->
                 
-                    <a class="red-link" href="<?php home_url('home')?>/archive-en/author/<?=$curauth->user_nicename?>" title="<?=$curauth->us_name_en?>'s archive (Until 2016 year)">English Archive</a>
+                    
+                
+                    <a class="red-link" href="<?php home_url('home')?>/archive-en/author/<?=$name_link?>" title="<?=$curauth->us_name_en?>'s archive (Until 2016 year)">English Archive</a>
                 
                 <?php
             }

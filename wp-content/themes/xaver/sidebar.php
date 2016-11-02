@@ -20,7 +20,37 @@ if (LANG != 'en') {
         //query
 //        query_posts(array('post_type' => 'post','lang' => 'ru', 'meta_key' => 'stol', 'meta_value' => 'yes',))
         ?>
-	<div class="right-box obshenie">
+
+    <?php 
+    /*
+     * Home page groupe menu 
+     */
+    if (is_page_template('page_home_groupe.php')) {
+        
+        ?>
+
+        <div class="home-page-menu">
+           <?php
+                wp_nav_menu(array(
+                    'theme-location' => '',
+                    'menu' => 'Меню домашней группы',
+                    'menu_class' => 'home-page-menu',
+                    'conteiner' => 'div',
+                    'container_class' => 'sidebar-menu',
+                ));
+            ?>   
+        </div>
+
+    <?php
+        
+    } else {
+    
+    
+    
+    
+    ?>
+
+    <div class="right-box obshenie">
         <h2><?php if(is_plugin_active('polylang/polylang.php')) {pll_e('ДИСКУССИОННЫЙ КЛУБ');} else { echo 'ДИСКУССИОННЫЙ КЛУБ';} ?></h2>
 
 		<?php
@@ -71,7 +101,9 @@ wp_reset_query();
              <a style="float:right" href="/diskussionnye-kluby"><?php if(is_plugin_active('polylang/polylang.php')) { pll_e('Посмотреть все'); }; ?></a>
 	</div>
 
-    <?php } ?>
+
+        <?php } ?>
+    <?php } else {?>
 
 
 		<!--<div class="right-box ukazatel">
@@ -83,13 +115,34 @@ wp_reset_query();
 		?></li>
 	</ul>
 	</div>  -->
+       
+        <?php
+    /*
+     * Home page groupe menu 
+     */
+    if (is_page_template('page_home_groupe.php')) {
+        
+        ?>
+
+        <div class="home-page-menu">
+           <?php
+                wp_nav_menu(array(
+                    'theme-location' => '',
+                    'menu' => 'Меню домашней группы (ENG)',
+                    'menu_class' => 'home-page-menu',
+                    'conteiner' => 'div',
+                    'container_class' => 'sidebar-menu',
+                ));
+            ?>   
+        </div>
+
+        <?php } ?>
+    <?php } ?>
+        
+        
 
 <?php dynamic_sidebar(); ?>
 
 </div>
 
-
-
-
-
-<!-- end sidebar -->
+<!--end sidebar-->

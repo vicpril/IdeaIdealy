@@ -63,13 +63,47 @@
     }
     ?>
 <a href="<?php bloginfo('siteurl'); ?>/" title="<?php bloginfo('name'); ?>"><img src="<?php bloginfo('template_directory'); ?><?=$logo?>" alt="<?php bloginfo('name'); ?>" class="logo" /></a>
-<ul class="lang">
-<li class="rus"><a href="/" title="Русский">Русский</a></li>
-<li class="eng"><a href="/en" title="English">English</a></li><!--
-</ul>-->
-</div>
-</div>
+<br><br>
 
+    <?php 
+        $cur_uri = explode('?', $_SERVER['REQUEST_URI']); 
+        $page = explode('/', $cur_uri[0]);
+        $page = $page[count($page)-1];
+        if (isset($_GET) && isset($_GET['tom'])) $tom = $_GET['tom']; else $tom = '';
+        if (isset($_GET) && isset($_GET['yearno'])) $yearno = $_GET['yearno']; else $yearno = '';
+        if (isset($_GET) && isset($_GET['no'])) $no = $_GET['no']; else $no = '';
+        if (isset($_GET) && isset($_GET['por'])) $por = $_GET['por']; else $por = '';
+        
+//var_dump($page);
+    ?>
+
+<?php switch ($page) {
+    case 'nomer' :
+    case 'nomer-en':
+        ?>
+            <ul class="lang">
+                <li class="rus"><a href="/nomer?tom=<?=$tom?>&yearno=<?=$yearno?>&no=<?=$no?>&por=<?=$por?>" title="Русский"><img alt="Русский" title="Русский" src="<?=get_template_directory_uri() . '/images/ru.png'?>"><span style="margin-left:0.3em;">Русский</span></a></li>
+                <li class="eng"><a href="/en/nomer-en?tom=<?=$tom?>&yearno=<?=$yearno?>&no=<?=$no?>&por=<?=$por?>" title="English"><img alt="English" title="English" src="<?=get_template_directory_uri() . '/images/us.png'?>"><span style="margin-left:0.3em;">English</span></a></li>
+            </ul>
+        <?php
+        break;
+    
+    default :
+        ?>
+            <ul class="lang">
+                <?php 
+                    pll_the_languages(array('show_flags'=>1,'show_names'=>1));
+                ?>
+            </ul>
+        <?php
+        break;
+        
+}
+?>
+       
+</div>
+</div>
+      
 <div class="navigation">
    <?php
         wp_nav_menu(array(

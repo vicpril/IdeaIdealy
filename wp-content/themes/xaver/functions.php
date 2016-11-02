@@ -42,7 +42,7 @@ if (function_exists('register_sidebar'))
 
 function register_scripts() {
     wp_deregister_script('jquery');
-    wp_register_script('jquery', get_template_directory() . '/js/jquery.js', array(), '1.11.1', true);
+    wp_register_script('jquery', get_template_directory_uri() . '/js/jquery.js', array(), '1.11.1', true);
 
     // Enqueue_scripts
     wp_enqueue_script('jquery');

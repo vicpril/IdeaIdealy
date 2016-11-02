@@ -133,7 +133,11 @@ if($yearno>2000 and $no>0){
                     <br>
                     <?php 
                     //the_author();
-                            if(function_exists(wt_the_coauthors_link) && (array_pop(get_post_custom_values('stol')) !== 'yes')): wt_the_coauthors_link("<b>","</b>", 'en', $post->ID); endif;
+                    $stol = get_post_custom_values('stol');
+                        if (empty($stol)) {
+                            $stol[] = 'no';
+                        }
+                    if(function_exists(wt_the_coauthors_link) && (array_pop($stol) !== 'yes')): wt_the_coauthors_link("<b>","</b>", 'en', $post->ID); endif;
 
                     ?>  
                     <!--DOI-->
@@ -143,8 +147,9 @@ if($yearno>2000 and $no>0){
                                  ?>
                     
                     <br>
-                    <b>DOI: </b><a style="color:grey; text-decoration:underline;" href="http://dx.doi.org/<?php echo $doi;?>" target="_blank"><?php echo $doi; ?></a>
-                    
+                    <!--<b>DOI: </b><a style="color:grey; text-decoration:underline;" href="http://dx.doi.org/<?php echo $doi;?>" target="_blank"><?php echo $doi; ?></a>-->
+                    <!--doi without link-->
+                    <b>DOI: </b><span style="color:grey;" ><?php echo $doi; ?></span>
                     
                                 <?php } ?>
                     

@@ -23,7 +23,7 @@
 <div class="design">
 <p>&copy; 2010 “Идеи и Идеалы”. Все права защищены<br />Редакция: <a style="color:#016F93" href="/kontakty">форма для связи</a></p>
 <p><a style="color:#016F93" href="http://xaver.ru/" title="Создание и разработка сайтов | изготовление сайтов-визиток и интернет-магазинов | Xaver.ru">Сделано в Xaver.ru</a>
-<br>В разработке принимал участвие <a style="color:#016F93" href="http://www.upwork.com/o/profiles/users/_~0185a6a50ee43e772c/" title="Веб-разработчик Виктор Прилепин">Виктор Прилепин</a></p>
+<br>В разработке принимал участие <a style="color:#016F93" href="http://www.upwork.com/o/profiles/users/_~0185a6a50ee43e772c/" title="Веб-разработчик Виктор Прилепин">Виктор Прилепин</a></p>
 </div>
 
 <div class="list">

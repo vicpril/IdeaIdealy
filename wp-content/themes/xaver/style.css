@@ -428,16 +428,27 @@ html, body {
 	padding:0 0 20px 40px;
 	margin:0 12px;
 	display:inline;
-        /*height: 60px;*/
+        
 }
+
+.header .lang li a img{
+    width: 28px;
+    height: 18px;
+    border: 2px solid #000;
+}
+    
 .header .lang li.rus {
-	background:url(images/rus.jpg) no-repeat 0 4px;
+        /*margin-top: 30px;*/
+/*	background:url(images/ru.png) no-repeat 0 4px;
         background-size: 30%;
+        border: 2px solid #000;*/
         
 }
 .header .lang li.eng {
-	background:url(images/eng.jpg) no-repeat 0 4px;
+        /*margin-top: 30px;*/
+/*	background:url(images/us.png) no-repeat 0 4px;
         background-size: 30%;
+        baborder: 2px solid #000;*/
 }
 .header .lang li a {
 	color:#292929;
@@ -682,8 +693,9 @@ html, body {
 	padding:15px 15px 25px 15px;
 }
 .obshenie {
-	padding:15px 15px 25px 15px;
-        background:url(images/hori_line.gif) repeat-x top;
+	padding:10px 15px 25px 15px;
+        margin: 5px 0 0 0;
+        /*background:url(images/hori_line.gif) repeat-x top;*/
 	background-color:#e9e5e4;
         
         
@@ -980,3 +992,183 @@ width:95%;
 .fscf-div-error{
     color: red;
 }
+
+/* Tabbed Styles */
+.tabbed {
+        width: 100%;
+        /*min-width: 400px;*/
+        margin: -11px auto;
+        margin-bottom: 15px;
+        /*border-top: 4px solid #000;*/
+        overflow: hidden;
+        transition: border 250ms ease;
+}
+.tabbed ul {
+    vertical-align: central;
+        margin: 0px;
+        padding: 0px;
+        overflow: hidden;
+        /*float: left;*/
+        padding-left: 48px;
+        list-style-type: none;
+}
+.tabbed ul * {
+        margin: 0px;
+        padding: 0px;
+}
+.tabbed ul li a {
+        height: auto;
+        
+    /*vertical-align: central;*/
+        display: block;
+        float: left;
+        padding: 10px 24px 8px;
+        background-color: #e9e5e4;
+        margin-right: 46px;
+        margin-bottom: 2px;
+        z-index: 2;
+        position: relative;
+        cursor: pointer;
+        color: #777;
+
+        text-transform: uppercase;
+        font: 600 13px/20px roboto, "Open Sans", Helvetica, sans-serif;
+        text-decoration: none;
+        transition: all 250ms ease;
+        box-shadow: rgba(190,190,190,.1) 0px 2px, 5px, inset rgba(255,255,255,.09) -1px 0;
+}
+.tabbed ul li a:before,
+.tabbed ul li a:after {
+        display: block;
+        content: " ";
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 44px; 	
+        background-color: #e9e5e4;
+        transition: all 250ms ease;
+        
+}
+.tabbed ul li a:before {
+        right: -24px;
+        transform: skew(-30deg, 0deg);
+        box-shadow: rgba(0,0,0,.1) 5px -0px 5px, inset rgba(255,255,255,.09) -1px 0;
+}
+.tabbed ul li a:after {
+        left: -24px;
+        transform: skew(30deg, 0deg);
+        box-shadow: rgba(0,0,0,.1) -5px -0px 5px, inset rgba(255,255,255,.09) 1px 0;
+}
+.tabbed ul li a:hover,
+.tabbed ul li a:hover:before,
+.tabbed ul li a:hover:after {
+        background-color: #F4F7F9;
+        color: #444;
+        text-decoration: none;
+        
+}
+.tabbed ul li.current-menu-item a {
+        z-index: 3;
+}
+.tabbed ul li.current-menu-item a,
+.tabbed ul li.current-menu-item a:before,
+.tabbed ul li.current-menu-item a:after {
+        background-color: #836f69;
+        color: #fff;
+}
+
+/* Round Tabs */
+.tabbed.round ul li a{
+        border-radius: 8px 8px 8px 8px;
+}
+.tabbed.round ul li a:before {
+        border-radius: 0 0 8px 0;
+}
+.tabbed.round ul li assssss:after {
+        border-radius: 0 0 0 8px;
+}
+
+/* Sydebar buttons */
+.sidebar-menu {
+        width: 100%;
+        /*min-width: 400px;*/
+        margin: 15px auto;
+        margin-bottom: 15px;
+        /*border-top: 4px solid #000;*/
+        overflow: hidden;
+        transition: border 250ms ease;
+}
+.sidebar-menu ul {
+    vertical-align: central;
+        /*margin: 0px;*/
+        margin: 0 5px 0 5px;
+        overflow: hidden;
+        /*float: left;*/
+        list-style-type: none;
+}
+.sidebar-menu ul li {
+        width: 100%;
+        margin: 0 0 2px 0;
+        padding: 0px;
+}
+.sidebar-menu ul li a {
+        height: auto;
+        width: 100%;
+        text-align: center;
+        display: inline-block;
+        /*float: left;*/
+        padding: 10px 0 8px 0;
+        background-color: #e9e5e4;
+        margin-right: 46px;
+        margin-bottom: 2px;
+        z-index: 2;
+        position: relative;
+        cursor: pointer;
+        color: #777;
+        border-radius: 8px 8px 8px 8px;
+
+        text-transform: uppercase;
+        font: 600 13px/20px roboto, "Open Sans", Helvetica, sans-serif;
+        text-decoration: none;
+        transition: all 250ms ease;
+        box-shadow: rgba(190,190,190,.1) 0px 2px, 5px, inset rgba(255,255,255,.09) -1px 0;
+}
+/*.sidebar-menu ul li a:before,
+.sidebar-menu ul li a:after {
+        display: block;
+        content: " ";
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 44px; 	
+        background-color: #e9e5e4;
+        transition: all 250ms ease;*/
+        
+/*}*/
+/*.sidebar-menu ul li a:before {
+        right: -24px;
+        transform: skew(-30deg, 0deg);
+        box-shadow: rgba(0,0,0,.1) 5px -0px 5px, inset rgba(255,255,255,.09) -1px 0;
+}
+.sidebar-menu ul li a:after {
+        left: -24px;
+        transform: skew(30deg, 0deg);
+        box-shadow: rgba(0,0,0,.1) -5px -0px 5px, inset rgba(255,255,255,.09) 1px 0;*/
+/*}*/
+.sidebar-menu ul li a:hover
+/*.sidebar-menu ul li a:hover:before,
+.sidebar-menu ul li a:hover:after */
+{
+        background-color: #F4F7F9;
+        color: #444;
+        text-decoration: none;
+        
+}
+.sidebar-menu ul li.current-menu-item a {
+        z-index: 3;
+}
+.sidebar-menu ul li.current-menu-item a,
+.sidebar-menu ul li.current-menu-item a:before,
+.sidebar-menu ul li.current-menu-item a:after {
+        background-color: #836f69;
+        color: #fff;
